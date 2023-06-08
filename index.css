@@ -18,8 +18,7 @@ html {
 
 body {
     width: 80%;
-    min-width: 500px;
-    max-width: 600px;
+    min-width: 600px;
     margin: 20px auto;
     background: #FFFFFF;
     border: 5px solid black;

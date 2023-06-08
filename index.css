@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    /* outline: 2px dotted tomato; */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #2B283A;
+
+}
+
+html {
+    background-color: #bdb0b0;
+}
+
+body {
+    width: 80%;
+    min-width: 400px;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+/* ----- header ----- */
+
+header {
+    background: #F5F5F5;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+header h1,
+header p {
+    text-align: center;
+    margin: 0;
+    padding: 0.25em;
+}
+
+header h1 {
+    padding-top: 1.5em;
+}
+
+header p {
+    padding-bottom: 1.5em;
+}
+
+/* ----- main ----- */
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.task-selection-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.task-btn-container {
+    flex: 1;
+    margin: 0.5em;
+}
+
+.task-btn {
+    width: 100%;
+    margin: 1em auto;
+    background: #FFFFFF;
+    color: #4A4E74;
+    border: 1px solid #D5D4D8;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-top-row,
+.task-bottom-row,
+.notes-total-amount-top-row,
+.notes-total-amount-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    color: #918E9B;
+    padding: 0.25em;
+    font-weight: bold;
+}
+
+.task-bottom-row {
+    border-bottom: 1.5px solid #918E9B;
+}
+
+.total-amount {
+    font-size: 2.5em;
+    color: #4A4E74;
+}
+
+.total-amount-paragraph {
+    margin: 0;
+}
+
+.task-name-style,
+.task-price-style {
+    font-size: 1.5em;
+    color: #4A4E74;
+}
+
+.dollar-sign-style {
+    font-size: 1.5em;
+    padding-right: 0.05em;
+}
+
+
+.invoice-btn {
+    width: 100%;
+    margin: 3em auto 2em;
+    background: #3770ED;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.send-invoice-icon {
+    padding-right: 0.5em;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  color: #888888;
+}

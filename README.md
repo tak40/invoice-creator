@@ -1,4 +1,4 @@
-# co35340b8bf9074a4a17e24f4
+# Invoice Creator
 
 Quick start:
 

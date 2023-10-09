@@ -1,45 +1,5 @@
-import { taskData } from './data.js';
-
-const taskList = document.getElementById('task-selection-section');
-
 let totalPrice = 0;
 let selectedTasks = [];
-
-// This function generates and displays task buttons using task data.
-function renderTasks() {
-    let taskBtnHtml = '';
-    for (let task of taskData) {
-        taskBtnHtml += `
-        <div class="task-btn-container">
-            <button class="task-btn" id="task-btn-${task.id}">${task.taskName}: $${task.price}</button>
-        </div>
-        `
-    }
-    taskList.innerHTML = taskBtnHtml;
-    // Now we add an event listener to each button. This will execute a function when a button is clicked.
-    for (let task of taskData) {
-        const taskBtn = document.getElementById(`task-btn-${task.id}`);
-        taskBtn.addEventListener('click', taskBtnClick);
-    }
-}
-
-// This function is executed when a task button is clicked.
-function taskBtnClick(e) {
-    let taskId = e.target.id.split('-')[2];
-    let task = taskData.find(task => task.id == taskId);
-    addTaskToList(task, e.target);
-}
-
-// This function adds a task to selected tasks and disables its button.
-function addTaskToList(task, taskBtn) {
-    if (!selectedTasks.includes(task)) {
-        selectedTasks.push(task);
-        displaySelectedTask(task.taskName, task.price);
-        totalPrice += task.price;
-        displayNotesAndTotalAmount();
-        taskBtn.disabled = true;
-    }
-}
 
 // This function displays a selected task in the task list.
 function displaySelectedTask(taskName, taskPrice) {
@@ -95,13 +55,43 @@ document.getElementById('invoice-btn').addEventListener('click', function() {
     document.getElementById('task-prices').innerHTML = '';
     document.getElementById('notes').innerHTML = '';
     document.getElementById('total-amount').innerHTML = '$0';
-
-    // We enable all task buttons again.
-    for (let task of taskData) {
-        const taskBtn = document.getElementById(`task-btn-${task.id}`);
-        taskBtn.disabled = false;
-    }
 });
 
-// We display task buttons as soon as script is loaded.
-renderTasks(taskData);
+
+
+
+// // This function generates and displays task buttons using task data.
+// function renderTasks() {
+//     let taskBtnHtml = '';
+//     for (let task of taskData) {
+//         taskBtnHtml += `
+//         <div class="task-btn-container">
+//             <button class="task-btn" id="task-btn-${task.id}">${task.taskName}: $${task.price}</button>
+//         </div>
+//         `
+//     }
+//     taskList.innerHTML = taskBtnHtml;
+//     // Now we add an event listener to each button. This will execute a function when a button is clicked.
+//     for (let task of taskData) {
+//         const taskBtn = document.getElementById(`task-btn-${task.id}`);
+//         taskBtn.addEventListener('click', taskBtnClick);
+//     }
+// }
+
+// // This function is executed when a task button is clicked.
+// function taskBtnClick(e) {
+//     let taskId = e.target.id.split('-')[2];
+//     let task = taskData.find(task => task.id == taskId);
+//     addTaskToList(task, e.target);
+// }
+
+// // This function adds a task to selected tasks and disables its button.
+// function addTaskToList(task, taskBtn) {
+//     if (!selectedTasks.includes(task)) {
+//         selectedTasks.push(task);
+//         displaySelectedTask(task.taskName, task.price);
+//         totalPrice += task.price;
+//         displayNotesAndTotalAmount();
+//         taskBtn.disabled = true;
+//     }
+// }

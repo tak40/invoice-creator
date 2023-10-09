@@ -5,26 +5,27 @@
 
 :root {
     /* Primary Text Colors */
-    --primary-text-color: #383838;  /* Darkened text for better contrast */
-    --secondary-text-color: #7D7C7C;
+    --primary-text-color: #202020;  
+    --secondary-text-color: #707070;
 
     /* Background Colors */
-    --primary-bg-color: #F1EFEF;    /* Main body background */
-    --secondary-bg-color: #E4E1D7; /* Header background */
-    --tertiary-bg-color: #CCC8AA;  /* Buttons, etc. */
+    --primary-bg-color: #FFFFFF;    
+    --secondary-bg-color: #FFA5A5;
+    --tertiary-bg-color: #6AB1D7;
 
     /* Interactive Elements */
-    --button-hover-color: #C3BF9F;  /* Darker than original tertiary color */
-    --button-active-color: #A9A57E; /* Even darker than hover color */
-    --button-disabled-color-bg: #cccccc;
-    --button-disabled-color-text: #888888;
+    --button-hover-color: #5B9CC7;
+    --button-active-color: #4A859C;
+    --button-disabled-color-bg: #E0E0E0;
+    --button-disabled-color-text: #B0B0B0;
 
     /* Borders and Dividers */
-    --border-color: #918E9B;
+    --border-color: #D0D0D0;
 
     /* Misc */
-    --highlight-color: #4A4E74;
+    --highlight-color: #FFD700;
 }
+
 
 
 
@@ -36,13 +37,8 @@ html, body {
 }
 
 body {
-    /* width: 80%; */
-    /* min-width: 500px;
-    max-width: 700px;
-    margin: 20px auto; */
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
-    /* border-radius: 20px; */
     line-height: 1.6;
 }
 
@@ -52,11 +48,16 @@ header {
     background: var(--secondary-bg-color)
 }
 
-header h1,
-header p {
+header h1 {
     text-align: center;
     margin: 0;
     padding: 0.125em;
+}
+
+header p {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 0.5em;
 }
 
 /* header h1 {

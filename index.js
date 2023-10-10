@@ -1,5 +1,50 @@
-let totalPrice = 0;
-let selectedTasks = [];
+// Step 1: Grab the DOM elements
+const taskInput = document.querySelector('.task-input');
+const priceInput = document.querySelector('.price-input');
+const quantityInput = document.querySelector('.quantity-input');
+const taskDetailsDiv = document.getElementById('task-details');
+const taskTotalsDiv = document.getElementById('task-totals');
+const addTaskButton = document.querySelector('.add-task-btn');
+
+
+addTaskButton.addEventListener('click', function() {
+    if (taskInput.value.trim() && priceInput.value && quantityInput.value) {
+        // Calculate total for the task
+        const total = Number(priceInput.value) * Number(quantityInput.value);
+
+        // Create a new div for task detail and append it
+        const newTaskDetailDiv = document.createElement('div');
+        newTaskDetailDiv.textContent = `${taskInput.value.trim()} x${quantityInput.value}`;
+        taskDetailsDiv.appendChild(newTaskDetailDiv);
+
+        // Create a new div for task total and append it
+        const newTaskTotalDiv = document.createElement('div');
+        newTaskTotalDiv.textContent = `$${total.toFixed(2)}`;
+        taskTotalsDiv.appendChild(newTaskTotalDiv);
+
+        // Calculate the total amount
+        let totalAmount = 0;
+        const taskTotals = document.querySelector('.task-totals').children;
+        for (let i = 0; i < taskTotals.length; i++) {
+            totalAmount += Number(taskTotals[i].textContent.slice(1));
+        }
+
+        // Display the total amount
+        const totalAmountDiv = document.querySelector('.total-amount');
+        totalAmountDiv.textContent = `$${totalAmount.toFixed(2)}`;
+        
+
+        // Clear the input fields
+        taskInput.value = '';
+        priceInput.value = '';
+        quantityInput.value = '';
+    } else {
+        alert('Please fill out all the fields.');
+    }
+});
+
+
+
 
 // This function displays a selected task in the task list.
 function displaySelectedTask(taskName, taskPrice) {

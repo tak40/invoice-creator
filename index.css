@@ -26,9 +26,6 @@
     --highlight-color: #FFD700;
 }
 
-
-
-
 html, body {
     margin: 0;
     padding: 0;
@@ -60,15 +57,7 @@ header p {
     padding-bottom: 0.5em;
 }
 
-/* header h1 {
-    padding-top: 1.5em;
-} */
-
-/* header p {
-    padding-bottom: 1.5em;
-} */
-
-/* ----- main ----- */
+/* ----- MAIN ----- */
 
 main {
     width: 90%;
@@ -141,6 +130,7 @@ main {
 .notes-total-amount-bottom-row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     margin: 0;
     color: var(--secondary-text-color);
@@ -148,8 +138,22 @@ main {
     font-weight: bold;
 }
 
+.task-names {
+    color: var(--primary-text-color);
+    font-size: 1.5rem;
+    width: 70%;
+}
+
+.task-prices,
+.task-quantities,
+.task-totals {
+    width: 10%;
+}
+
 .task-bottom-row {
     border-bottom: 1.5px solid var(--border-color);
+    color: var(--primary-text-color);
+    line-height: 2;
 }
 
 .total-amount {
@@ -169,8 +173,6 @@ main {
     font-size: 1.5em;
     padding-right: 0.05em;
 }
-
-
 
 .invoice-btn {
     width: 100%;
@@ -195,7 +197,6 @@ button:disabled {
   background-color: var(--button-disabled-color-bg);
   color: var(--button-disabled-color-text);
 }
-
 
 /* For tablets */
 @media (min-width: 600px) and (max-width: 1024px) {

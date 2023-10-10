@@ -19,17 +19,37 @@
         <p>Thanks for choosing GoodCorp, LLC!</p>
     </header>
     <main>
+
         <section class="task-entry-section">
-            <input type="text" id="task" class="task-input" placeholder="Enter Task">
+            <div class="input-group">
+                <span class="input-label">
+                    <i class="fa-solid fa-tasks"></i>
+                    Task:
+                </span>
+                <input type="text" id="task" class="task-input" placeholder="Center a div">
+            </div>
             <div class="price-quantity-container">
-                <input type="number" min="0" id="price" class="price-input" placeholder="Enter Price">
-                <input type="number" min="0" id="quantity" class="quantity-input" placeholder="Quantity">
+                <div class="input-group">
+                    <span class="input-label">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        Price:
+                    </span>
+                    <input type="number" min="0" id="price" class="price-input" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <span class="input-label">
+                        <i class="fa-solid fa-calculator"></i>
+                        Quantity:
+                    </span>
+                    <input type="number" min="0" id="quantity" class="quantity-input" placeholder="0">
+                </div>
             </div>
             <button id="add-task-btn" class="add-task-btn">
                 <i class="fa-solid fa-plus add-task-icon"></i>
-                Add Task</button>
+                Add Task
+            </button>
         </section>
-
+        
         <section>
             <div class="task-header">
                 <div class='task-top-row'>

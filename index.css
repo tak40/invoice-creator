@@ -73,6 +73,17 @@ main {
     margin: 1em auto;
 }
 
+.input-label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
 .task-input, .price-input, .quantity-input, .add-task-btn {
     border-radius: 5px; /* Added border-radius for a softer look */
     border: 1px solid var(--border-color); /* Consistent border */
@@ -84,24 +95,26 @@ main {
     padding: 0.5em;
 }
 
+.price-input,
+.quantity-input {
+    display: flex;
+    padding: 0.5em;
+    text-align: right;
+    margin: 0 auto;
+    width: 100%;
+}
+
 .price-quantity-container {
     display: flex;
     gap: 1em;
 }
 
-.price-input {
-    width: 60%;
-    padding: 0.5em;
-}
-
-.quantity-input {
-    width: 40%;
-    padding: 0.5em;
+.price-quantity-container > * {
+    flex: 1;
 }
 
 .add-task-btn {
     width: 100%;
-    padding: 0.5em;
     background-color: var(--tertiary-bg-color);
     color: var(--primary-text-color); 
     cursor: pointer; 
@@ -110,6 +123,7 @@ main {
     font-weight: bold;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     padding: 1em;
+    margin: 0.45em 0;
 }
 
 .add-task-icon {

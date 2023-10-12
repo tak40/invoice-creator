@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -44,8 +44,8 @@
                     <input type="number" min="0" id="quantity" class="quantity-input" placeholder="0">
                 </div>
             </div>
-            <button id="add-task-btn" class="add-task-btn">
-                <i class="fa-solid fa-plus add-task-icon"></i>
+            <button id="add-task-btn" class="add-task-btn primary-btn">
+                <i class="fa-solid fa-plus btn-icon"></i>
                 Add Task
             </button>
         </section>
@@ -69,12 +69,28 @@
                 </div>
             </div>
         </section>
-        <button class="send-invoice-btn" id='send-invoice-btn'>
-            <i class="fa-solid fa-envelope send-invoice-icon"></i>
+        <button class="send-invoice-btn primary-btn" id='send-invoice-btn'>
+            <i class="fa-solid fa-envelope btn-icon"></i>
             Send Invoice
         </button>
     </main>
-      
+    <footer>
+        <!-- GitHub link with Font Awesome icon -->
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github footer-icon"></i>GitHub
+        </a>
+
+        <!-- Twitter link with Font Awesome icon -->
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <i class="fa-brands fa-square-x-twitter footer-icon"></i>X
+        </a>
+    
+        <!-- LinkedIn link with Font Awesome icon -->
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin footer-icon"></i>LinkedIn
+        </a>
+    </footer>    
+
     <script type="module" src="index.js"></script>
 </body>
 

@@ -39,7 +39,15 @@ body {
     line-height: 1.6;
 }
 
-/* ----- header ----- */
+/* ----- MAIN ----- */
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* ----- HEADER ----- */
 
 header {
     background: var(--secondary-bg-color)
@@ -57,12 +65,7 @@ header p {
     padding-bottom: 0.5em;
 }
 
-/* ----- MAIN ----- */
-
-main {
-    width: 90%;
-    margin: 0 auto;
-}
+/* ----- TASK ENTRY SECTION ----- */
 
 .task-entry-section {
     display: flex;
@@ -138,8 +141,9 @@ main {
     background-color: var(--button-active-color); /* Use the new active color */
 }
 
+/* ----- TASK LIST SECTION ----- */
+
 .task-top-row,
-.task-bottom-row,
 .notes-total-amount-top-row,
 .notes-total-amount-bottom-row {
     display: flex;
@@ -150,24 +154,34 @@ main {
     color: var(--secondary-text-color);
     padding: 0.25em;
     font-weight: bold;
+    width: 100%;
 }
 
-.task-names {
+.task-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure the task items occupy the full width */
+}
+
+.task-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+
+.task-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-names,
+.total {
     color: var(--primary-text-color);
     font-size: 1.5rem;
-    width: 70%;
-}
-
-.task-prices,
-.task-quantities,
-.task-totals {
-    width: 10%;
-}
-
-.task-bottom-row {
-    border-bottom: 1.5px solid var(--border-color);
-    color: var(--primary-text-color);
-    line-height: 2;
 }
 
 .total-amount {
@@ -188,7 +202,7 @@ main {
     padding-right: 0.05em;
 }
 
-.invoice-btn {
+.send-invoice-btn {
     width: 100%;
     margin: 3em auto 2em;
     background: var(--tertiary-bg-color);
@@ -221,3 +235,4 @@ button:disabled {
 @media (min-width: 1024px) {
     /* Styles for desktops go here */
 }
+

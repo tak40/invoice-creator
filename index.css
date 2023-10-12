@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
-    /* outline: 2px dotted tomato; */
+    outline: 2px dotted tomato;
 }
 
 :root {
-    /* Primary Text Colors */
+    /* Text Colors */
     --primary-text-color: #202020;  
     --secondary-text-color: #707070;
 
@@ -12,8 +12,13 @@
     --primary-bg-color: #FFFFFF;    
     --secondary-bg-color: #FFA5A5;
     --tertiary-bg-color: #6AB1D7;
+    --light-red-bg-color: #FF8A80;   /* Light red background color for remove-btn */
+    --dark-red-bg-color: #FF5252;   /* Dark red hover background color for remove-btn */
+    --light-gray-bg-color: #F0F0F0; /* Light gray background color, used in various places */
+    --dark-gray-bg-color: #E0E0E0;  /* Dark gray hover background color */
 
     /* Interactive Elements */
+    --button-primary-bg-color: #6AB1D7;  /* Primary button background color */
     --button-hover-color: #5B9CC7;
     --button-active-color: #4A859C;
     --button-disabled-color-bg: #E0E0E0;
@@ -22,18 +27,33 @@
     /* Borders and Dividers */
     --border-color: #D0D0D0;
 
+    /* Border Radii */
+    --small-border-radius: 5px;
+    --medium-border-radius: 7px;  /* This was specifically for .send-invoice-btn */
+    --large-border-radius: 10px;  /* Used in .task-quantity */
+
+    /* Transitions */
+    --primary-transition: 0.3s ease-in-out;
+
     /* Misc */
     --highlight-color: #FFD700;
+    --footer-bg-color: #EAEAEA;          /* Background color for footer */
+    --footer-link-color: #505050;        /* Link color for footer links */
+    --footer-link-hover-color: #2C2C2C;  /* Link hover color for footer links */
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+
+html{
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
     line-height: 1.6;
@@ -44,8 +64,8 @@ body {
 main {
     width: 90%;
     margin: 0 auto;
+    flex: 1 0 auto; /* This ensures main content pushes the footer to the bottom */
 }
-
 
 /* ----- HEADER ----- */
 
@@ -88,9 +108,9 @@ header p {
 }
 
 .task-input, .price-input, .quantity-input, .add-task-btn {
-    border-radius: 5px; /* Added border-radius for a softer look */
-    border: 1px solid var(--border-color); /* Consistent border */
-    transition: all 0.3s; /* Smooth transition for all changes */
+    border-radius: var(--small-border-radius);
+    border: 1px solid var(--border-color); 
+    transition: var(--primary-transition);
 }
 
 .task-input {
@@ -116,30 +136,39 @@ header p {
     flex: 1;
 }
 
-.add-task-btn {
+.primary-btn {
     width: 100%;
     background-color: var(--tertiary-bg-color);
-    color: var(--primary-text-color); 
-    cursor: pointer; 
+    color: var(--primary-text-color);
     border: none;
+    border-radius: var(--medium-border-radius);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     font-size: 1rem;
     font-weight: bold;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: background-color var(--primary-transition);
     padding: 1em;
-    margin: 0.45em 0;
+    margin: 0.45em 0; 
 }
 
-.add-task-icon {
+.primary-btn:hover {
+    background-color: var(--button-hover-color);
+}
+
+.primary-btn:active {
+    background-color: var(--button-active-color);
+}
+
+.primary-btn:disabled {
+  background-color: var(--button-disabled-color-bg);
+  color: var(--button-disabled-color-text);
+}
+
+
+.btn-icon {
     margin-right: 0.5em;
 }
 
-.add-task-btn:hover, .invoice-btn:hover {
-    background-color: var(--button-hover-color); /* Use the new hover color */
-}
-
-.add-task-btn:active, .invoice-btn:active {
-    background-color: var(--button-active-color); /* Use the new active color */
-}
 
 /* ----- TASK LIST SECTION ----- */
 
@@ -161,7 +190,7 @@ header p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Ensure the task items occupy the full width */
+    width: 100%;
 }
 
 .task-details {
@@ -173,25 +202,25 @@ header p {
 
 .remove-btn {
     font-size: 0.888rem;
-    background-color: #FF8A80; /* light red */
+    background-color: var(--light-red-bg-color); 
     color: var(--primary-text-color);
     border: none;
     padding: 4px 8px;
-    border-radius: 5px;
+    border-radius: var(--small-border-radius);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color var(--primary-transition);
 }
 
 .remove-btn:hover {
-    background-color: #FF5252; /* darker red */
+    background-color: var(--dark-red-bg-color); 
 }
 
 .task-quantity {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F0F0F0; /* light gray */
-    border-radius: 10px;
+    background-color: var(--light-gray-bg-color); 
+    border-radius: var(--large-border-radius);
     padding: 0 10px;
     gap: 0.5em;
     height: 1.75em;
@@ -205,22 +234,22 @@ header p {
 
 /* Minus and Plus button styling */
 .task-quantity .minus-btn, .task-quantity .plus-btn {
-    background-color: #F0F0F0; /* same color as the parent container */
+    background-color: var(--light-gray-bg-color); 
     border: none;
     color: var(--primary-text-color); 
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: var(--small-border-radius);
     cursor: pointer;
-    transition: background-color 0.2s; /* smooth transition for hover effect */
+    transition: background-color var(--primary-transition);
 }
 
 .task-quantity .minus-btn:hover, .task-quantity .plus-btn:hover {
-    background-color: #E0E0E0; /* slightly darker gray for hover */
+    background-color: var(--dark-gray-bg-color); /* slightly darker gray for hover */
 }
 
 /* Quantity styling */
 .task-quantity .quantity {
-    background-color: #F0F0F0; /* light gray */
+    background-color: var(--light-gray-bg-color); /* light gray */
 }
 
 
@@ -248,28 +277,39 @@ header p {
     font-size: 0.85rem;
 }
 
-.send-invoice-btn {
-    width: 100%;
-    margin: 3em auto 2em;
-    background: var(--tertiary-bg-color);
-    color: var(--primary-text-color);
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    border-radius: 7px;
-    padding: 1em;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.send-invoice-icon {
-    margin-right: 0.5em;
-}
 
 button:disabled {
   background-color: var(--button-disabled-color-bg);
   color: var(--button-disabled-color-text);
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* This ensures the footer doesn't shrink */
+    height: 5em;
+    background-color: var(--footer-bg-color);  
+    padding: 1em 0;
+    text-align: center;
+}
+
+footer a {
+    color: var(--footer-link-color);  
+    text-decoration: none;
+    margin: 0 1em;  
+    font-size: 0.85em;  
+    transition: color var(--primary-transition); 
+}
+
+footer a:hover {
+    color: #2C2C2C;
+}
+
+.footer-icon {
+    margin-right: 0.5em;  
 }
 
 /* For tablets */
@@ -281,4 +321,3 @@ button:disabled {
 @media (min-width: 1024px) {
     /* Styles for desktops go here */
 }
-

@@ -171,11 +171,30 @@ header p {
     gap: 1em;
 }
 
+.remove-btn {
+    font-size: 0.888rem;
+    background-color: #FF8A80; /* light red */
+    color: var(--primary-text-color);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #FF5252; /* darker red */
+}
 
 .task-quantity {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F0F0F0; /* light gray */
+    border-radius: 10px;
+    padding: 0 10px;
+    gap: 0.5em;
+    height: 1.75em;
 }
 
 .task-names,
@@ -183,6 +202,27 @@ header p {
     color: var(--primary-text-color);
     font-size: 1.5rem;
 }
+
+/* Minus and Plus button styling */
+.task-quantity .minus-btn, .task-quantity .plus-btn {
+    background-color: #F0F0F0; /* same color as the parent container */
+    border: none;
+    color: var(--primary-text-color); 
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s; /* smooth transition for hover effect */
+}
+
+.task-quantity .minus-btn:hover, .task-quantity .plus-btn:hover {
+    background-color: #E0E0E0; /* slightly darker gray for hover */
+}
+
+/* Quantity styling */
+.task-quantity .quantity {
+    background-color: #F0F0F0; /* light gray */
+}
+
 
 .total-amount {
     font-size: 2.5em;

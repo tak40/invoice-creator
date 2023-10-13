@@ -91,8 +91,8 @@ header p {
     flex-direction: column;
     gap: 0.5em;
     width: 100%;
-    font-size: 1.5rem;
-    margin: 1em auto;
+    font-size: 1.25rem;
+    margin: 1.5em auto;
 }
 
 .input-label {
@@ -179,34 +179,39 @@ header p {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0;
     color: var(--secondary-text-color);
-    padding: 0.25em;
     font-weight: bold;
     width: 100%;
+    margin: 0.5em 0;
 }
 
 .task-list {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto 1fr; 
+    grid-template-rows: auto auto;
+    /* gap: 1em; */
+    grid-template-areas:
+        "taskname taskname taskname"
+        "removebtn taskquantity tasktotal";
     align-items: center;
     width: 100%;
 }
 
-.task-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
+/* Add a subtle bottom border to every task except the last one */
+.task-list:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em; 
 }
 
 .remove-btn {
-    font-size: 0.888rem;
+    grid-area: removebtn;
+    font-size: 0.75rem;
     background-color: var(--light-red-bg-color); 
     color: var(--primary-text-color);
     border: none;
     padding: 4px 8px;
-    border-radius: var(--small-border-radius);
+    border-radius: var(--large-border-radius);
     cursor: pointer;
     transition: background-color var(--primary-transition);
 }
@@ -215,21 +220,50 @@ header p {
     background-color: var(--dark-red-bg-color); 
 }
 
+.remove-btn, 
 .task-quantity {
+    margin: 0;
+}
+
+.task-quantity {
+    grid-area: taskquantity;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--light-gray-bg-color); 
     border-radius: var(--large-border-radius);
     padding: 0 10px;
+    margin-left: 1em;
     gap: 0.5em;
-    height: 1.75em;
+    height: 1.35em;
+}
+
+.quantity {
+    font-size: 0.75em;
+}
+
+.task-names {
+    grid-area: taskname;
+    margin: 0 0 0.125em 0;
+}
+
+.task-totals {
+    grid-area: tasktotal;
+    text-align: right;
+}
+
+.total {
+    margin: 0;
+}
+
+.total span {
+    color: var(--secondary-text-color);
 }
 
 .task-names,
 .total {
     color: var(--primary-text-color);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 /* Minus and Plus button styling */
@@ -260,11 +294,11 @@ header p {
 }
 
 .payment-methods-note {
-    margin: 0;
+    margin: 0 0 0.25em 0;
 }
 
 .total-amount {
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: right;
 }
 
@@ -287,7 +321,6 @@ header p {
 .send-invoice-btn{
     margin: 1.5em 0;
 }
-
 
 button:disabled {
   background-color: var(--button-disabled-color-bg);

@@ -9,18 +9,17 @@
     --secondary-text-color: #707070;
 
     /* Background Colors */
-    --primary-bg-color: #FFFFFF;    
+    --primary-bg-color: #fdfdfd;    
     --secondary-bg-color: #FFA5A5;
     --tertiary-bg-color: #6AB1D7;
-    --light-red-bg-color: #FF8A80;   /* Light red background color for remove-btn */
-    --dark-red-bg-color: #FF5252;   /* Dark red hover background color for remove-btn */
-    --light-gray-bg-color: #F0F0F0; /* Light gray background color, used in various places */
-    --dark-gray-bg-color: #E0E0E0;  /* Dark gray hover background color */
+    --light-gray-bg-color: #F0F0F0; 
+    --dark-gray-bg-color: #E0E0E0; 
 
     /* Interactive Elements */
-    --button-primary-bg-color: #6AB1D7;  /* Primary button background color */
-    --button-hover-color: #5B9CC7;
-    --button-active-color: #4A859C;
+    --button-red-hover-color: #FF8A80;  
+    --button-red-active-color: #FF5252;  
+    --button-blue-hover-color: #5B9CC7;
+    --button-blue-active-color: #4A859C;
     --button-disabled-color-bg: #E0E0E0;
     --button-disabled-color-text: #B0B0B0;
 
@@ -29,17 +28,16 @@
 
     /* Border Radii */
     --small-border-radius: 5px;
-    --medium-border-radius: 7px;  /* This was specifically for .send-invoice-btn */
-    --large-border-radius: 10px;  /* Used in .task-quantity */
+    --medium-border-radius: 7px;  
+    --large-border-radius: 10px; 
 
     /* Transitions */
     --primary-transition: 0.3s ease-in-out;
 
     /* Misc */
-    --highlight-color: #FFD700;
-    --footer-bg-color: #EAEAEA;          /* Background color for footer */
-    --footer-link-color: #505050;        /* Link color for footer links */
-    --footer-link-hover-color: #2C2C2C;  /* Link hover color for footer links */
+    --highlight-color: #FFD700;      
+    --footer-link-color: #505050;      
+    --footer-link-hover-color: #2C2C2C;  
 }
 
 html{
@@ -154,11 +152,11 @@ header p {
 }
 
 .primary-btn:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--button-blue-hover-color);
 }
 
 .primary-btn:active {
-    background-color: var(--button-active-color);
+    background-color: var(--button-blue-active-color);
 }
 
 .primary-btn:disabled {
@@ -189,7 +187,6 @@ header p {
     display: grid;
     grid-template-columns: auto auto 1fr; 
     grid-template-rows: auto auto;
-    /* gap: 1em; */
     grid-template-areas:
         "taskname taskname taskname"
         "removebtn taskquantity tasktotal";
@@ -207,7 +204,7 @@ header p {
 .remove-btn {
     grid-area: removebtn;
     font-size: 0.75rem;
-    background-color: var(--light-red-bg-color); 
+    background-color: var(--secondary-bg-color); 
     color: var(--primary-text-color);
     border: none;
     padding: 4px 8px;
@@ -217,7 +214,11 @@ header p {
 }
 
 .remove-btn:hover {
-    background-color: var(--dark-red-bg-color); 
+    background-color: var(--button-red-hover-color); 
+}
+
+.remove-btn:active {
+    background-color: var(--button-red-active-color); 
 }
 
 .remove-btn, 
@@ -266,7 +267,6 @@ header p {
     font-size: 1.25rem;
 }
 
-/* Minus and Plus button styling */
 .task-quantity 
 .minus-btn, 
 .task-quantity 
@@ -281,12 +281,11 @@ header p {
 }
 
 .task-quantity .minus-btn:hover, .task-quantity .plus-btn:hover {
-    background-color: var(--dark-gray-bg-color); /* slightly darker gray for hover */
+    background-color: var(--dark-gray-bg-color); 
 }
 
-/* Quantity styling */
 .task-quantity .quantity {
-    background-color: var(--light-gray-bg-color); /* light gray */
+    background-color: var(--light-gray-bg-color); 
 }
 
 .notes-total-amount-bottom-row {
@@ -335,21 +334,33 @@ footer {
     align-items: center;
     flex-shrink: 0; /* This ensures the footer doesn't shrink */
     height: 5em;
-    background-color: var(--footer-bg-color);  
+    background-color: var(--light-gray-bg-color);  
     padding: 1em 0;
     text-align: center;
+    
 }
 
 footer a {
     color: var(--footer-link-color);  
     text-decoration: none;
+    padding: 5px 10px;
     margin: 0 1em;  
     font-size: 0.85em;  
-    transition: color var(--primary-transition); 
+    border-bottom: 1px solid transparent;
+    transition: var(--primary-transition); 
 }
 
 footer a:hover {
-    color: #2C2C2C;
+    color: var(--footer-link-hover-color);
+    border-bottom: 1px solid var(--footer-link-hover-color);
+    transition: var(--primary-transition);
+    outline-offset: 2px;
+}
+
+footer a:active {
+    background-color: var(--dark-gray-bg-color);
+    border-bottom: 1px solid var(--footer-link-hover-color);
+    transition: var(--primary-transition);
 }
 
 .footer-icon {
@@ -433,25 +444,29 @@ menu {
 }
 
 #submit-modal-btn {
-    background-color: var(--button-primary-bg-color);
+    background-color: var(--tertiary-bg-color);
     color: var(--primary-bg-color);
 }
 
 #submit-modal-btn:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--button-blue-hover-color);
 }
 
 #submit-modal-btn:active {
-    background-color: var(--button-active-color);
+    background-color: var(--button-blue-active-color);
 }
 
 #cancel-modal-btn, #close-confirm-modal-btn {
-    background-color: var(--light-red-bg-color);
+    background-color: var(--secondary-bg-color);
     color: var(--primary-text-color);
 }
 
 #cancel-modal-btn:hover, #close-confirm-modal-btn:hover {
-    background-color: var(--dark-red-bg-color);
+    background-color: var(--button-red-hover-color);
+}
+
+#cancel-modal-btn:active, #close-confirm-modal-btn:active {
+    background-color: var(--button-red-active-color);
 }
 
 .confirmation-modal {

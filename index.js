@@ -21,7 +21,7 @@ const closeConfirmModalBtn = document.getElementById('close-confirm-modal-btn')
 // Event Listeners
 addTaskButton.addEventListener('click', addTask)
 tasksContainerDiv.addEventListener('click', handleTaskEvents)
-sendInvoiceButton.addEventListener('click', () => invoiceModal.showModal())
+sendInvoiceButton.addEventListener('click', handleSendInvoice)
 
 // Modal Event Listeners
 submitModalBtn.addEventListener('click', processInvoice)
@@ -158,6 +158,18 @@ function updateTotalAmount() {
 
 // Modal Functions
 
+function handleSendInvoice() {
+    // Check if any tasks are present
+    const tasks = tasksContainerDiv.querySelectorAll('.task-list');
+    if (tasks.length > 0) {
+        // Show the invoice modal if tasks are present
+        invoiceModal.showModal();
+    } else {
+        // Handle the situation when no tasks are added (e.g., alert the user)
+        alert("Please add tasks before sending an invoice.");
+    }
+}
+
 function clearAllTasks() {
     // Remove all tasks from the task list
     while(tasksContainerDiv.firstChild) {
@@ -168,12 +180,21 @@ function clearAllTasks() {
 }
 
 function processInvoice() {
-    // Here you'd normally process the invoice, but for this example:
-    clearAllTasks()
-    invoiceModal.close()
-    // Display the confirmation message:
-    confirmationModal.showModal()
+    // Grab the values from the email and message fields in the modal
+    const emailValue = document.getElementById('email').value.trim();
+    const messageValue = document.getElementById('message').value.trim();
+
+    // Check if the values are not empty
+    if (emailValue && messageValue) {
+        // Clear all tasks, close the invoice modal and show the confirmation message
+        clearAllTasks();
+        invoiceModal.close();
+        confirmationModal.showModal();
+    } else {
+        alert("Please ensure the email and message fields are filled out.");
+    }
 }
+
 
 function closeModalOnMouseDownOutside(event) {
     console.log("Mouse down detected");

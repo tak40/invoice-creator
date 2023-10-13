@@ -83,6 +83,8 @@ function addTask() {
         taskInput.value = ''
         priceInput.value = ''
         quantityInput.value = ''
+    } else {
+        alert("Please enter a valid task, price, and quantity")
     }
     updateTotalAmount()
 }

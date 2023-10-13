@@ -1,6 +1,6 @@
 *, *::before, *::after{
     box-sizing: border-box;
-    outline: 2px dotted tomato;
+    /* outline: 2px dotted tomato; */
 }
 
 :root {
@@ -41,7 +41,6 @@
     --footer-link-color: #505050;        /* Link color for footer links */
     --footer-link-hover-color: #2C2C2C;  /* Link hover color for footer links */
 }
-
 
 html{
     font-family: 'Inter', sans-serif;
@@ -107,7 +106,10 @@ header p {
     gap: 0.25em;
 }
 
-.task-input, .price-input, .quantity-input, .add-task-btn {
+.task-input, 
+.price-input, 
+.quantity-input, 
+.add-task-btn {
     border-radius: var(--small-border-radius);
     border: 1px solid var(--border-color); 
     transition: var(--primary-transition);
@@ -164,11 +166,9 @@ header p {
     color: var(--button-disabled-color-text);
 }
 
-
 .btn-icon {
     margin-right: 0.5em;
 }
-
 
 /* ----- TASK LIST SECTION ----- */
 
@@ -233,7 +233,10 @@ header p {
 }
 
 /* Minus and Plus button styling */
-.task-quantity .minus-btn, .task-quantity .plus-btn {
+.task-quantity 
+.minus-btn, 
+.task-quantity 
+.plus-btn {
     background-color: var(--light-gray-bg-color); 
     border: none;
     color: var(--primary-text-color); 
@@ -252,13 +255,17 @@ header p {
     background-color: var(--light-gray-bg-color); /* light gray */
 }
 
+.notes-total-amount-bottom-row {
+    display: block;
+}
+
+.payment-methods-note {
+    margin: 0;
+}
 
 .total-amount {
     font-size: 2.5em;
-}
-
-.total-amount-paragraph {
-    margin: 0;
+    text-align: right;
 }
 
 .task-name-style,
@@ -275,6 +282,10 @@ header p {
     font-style: italic; 
     color: var(--secondary-text-color); 
     font-size: 0.85rem;
+}
+
+.send-invoice-btn{
+    margin: 1.5em 0;
 }
 
 

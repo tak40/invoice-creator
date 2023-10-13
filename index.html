@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<head>
+    <!-- Basic meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
     <title>Invoice Creator</title>
+
+    <!-- Styles and Fonts -->
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -18,8 +27,10 @@
         <h1>Invoice Creator</h1>
         <p>Thanks for choosing GoodCorp, LLC!</p>
     </header>
+
     <main>
 
+        <!-- Task Entry Section -->
         <section class="task-entry-section">
             <div class="input-group">
                 <span class="input-label">
@@ -49,7 +60,8 @@
                 Add Task
             </button>
         </section>
-        
+
+        <!-- Task Display Section -->
         <section>
             <div class="task-header">
                 <div class='task-top-row'>
@@ -57,9 +69,11 @@
                     <p>TOTAL</p>
                 </div>
                 <div id="tasks-container" class="tasks-container">
-                    <!-- Rendered via JavaScript -->
+                    <!-- Task items will be dynamically rendered here -->
                 </div>            
-            </div>     
+            </div>    
+            
+            <!-- Notes and Total Amount Section -->
             <div class="notes-total-amount-header">
                 <div class='notes-total-amount-top-row'>
                     <p>NOTES</p>
@@ -71,11 +85,15 @@
                 </div>
             </div>
         </section>
+
+        <!-- Send Invoice Section -->
         <button class="send-invoice-btn primary-btn" id='send-invoice-btn'>
             <i class="fa-solid fa-envelope btn-icon"></i>
             Send Invoice
         </button>
     </main>
+
+    <!-- Footer with Social Links -->
     <footer>
         <!-- GitHub link with Font Awesome icon -->
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -93,7 +111,7 @@
         </a>
     </footer>    
 
-
+    <!-- Invoice Modal -->
     <dialog id="invoice-modal" class="invoice-modal">
         <form method="dialog">
             <fieldset>
@@ -110,12 +128,13 @@
         </form>
     </dialog>
 
+    <!-- Confirmation Modal -->
     <dialog id="confirmation-modal" class="confirmation-modal">
         <p>Invoice Sent Successfully!</p>
         <button id="close-confirm-modal-btn" class="modal-btn modal-close-btn">OK</button>
     </dialog>    
     
-
+    <!-- Script -->
     <script type="module" src="index.js"></script>
 </body>
 

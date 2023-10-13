@@ -64,10 +64,8 @@ function addTask() {
         // Create the HTML structure for the task details
         const htmlString = `
             <section class="task-list">
-                <div class="task-details">
-                    <p class="task-names">${taskInput.value.trim()}</p>
-                    <button id="remove-btn" class="remove-btn">remove</button>
-                </div>
+                <p class="task-names">${taskInput.value.trim()}</p>
+                <button id="remove-btn" class="remove-btn">remove</button>
                 <div class="task-quantity">
                     <button class="minus-btn">${quantityInput.value === '1' ? '<i class="fas fa-trash"></i>' : '-'}</button>
                     <p class="quantity">${quantityInput.value}</p>

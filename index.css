@@ -141,7 +141,9 @@ header p {
 
 .primary-btn {
     width: 100%;
-    background-color: var(--tertiary-bg-color);
+    background: linear-gradient(45deg, var(--tertiary-bg-color), var(--tertiary-bg-color), var(--button-blue-hover-color), var(--button-blue-hover-color));
+    background-size: 200% 100%;
+    background-position: 100% 0;
     color: var(--primary-text-color);
     border: none;
     border-radius: var(--medium-border-radius);
@@ -155,11 +157,11 @@ header p {
 }
 
 .primary-btn:hover {
-    background-color: var(--button-blue-hover-color);
+    background-position: 0 0;
 }
 
 .primary-btn:active {
-    background-color: var(--button-blue-active-color);
+    background-position: 50% 0;
 }
 
 .btn-icon {
@@ -200,23 +202,25 @@ header p {
 }
 
 .remove-btn {
-    grid-area: removebtn;
+    grid-area: removebtn; 
     font-size: 0.75rem;
-    background-color: var(--secondary-bg-color); 
+    background: linear-gradient(45deg, var(--secondary-bg-color), var(--secondary-bg-color), var(--button-red-hover-color), var(--button-red-hover-color));
+    background-size: 200% 100%;
+    background-position: 100% 0; 
     color: var(--primary-text-color);
     border: none;
     padding: 4px 8px;
     border-radius: var(--large-border-radius);
     cursor: pointer;
-    transition: background-color var(--primary-transition);
+    transition: var(--primary-transition);
 }
 
 .remove-btn:hover {
-    background-color: var(--button-red-hover-color); 
+    background-position: 0 0;
 }
 
 .remove-btn:active {
-    background-color: var(--button-red-active-color); 
+    background-position: 50% 0;
 }
 
 .remove-btn, 
@@ -319,7 +323,7 @@ header p {
 }
 
 .send-invoice-btn{
-    margin: 1.5em 0;
+    margin: 1.5em auto;
 }
 
 /* ----- FOOTER ----- */
@@ -485,6 +489,21 @@ menu {
         gap: 0.25em;
     }
     
+    /* BUTTONS */
+
+    .primary-btn {
+        display: block;
+        width: 45%;
+        margin: 1em auto;
+    }
+
+    .btn-icon {
+        margin-right: 0.25em;
+    }
+
+    .send-invoice-btn {
+        margin-bottom: 2em;
+    }
   
     /* FOOTER */
 
@@ -507,6 +526,7 @@ menu {
         max-width: 50vw;
         max-height: 40vh;
     }
+    
 }
 
 /* For desktops */

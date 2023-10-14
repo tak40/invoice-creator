@@ -14,6 +14,8 @@
     --tertiary-bg-color: #6AB1D7;
     --light-gray-bg-color: #F0F0F0; 
     --dark-gray-bg-color: #E0E0E0; 
+    --active-dark-gray-bg-color: #D0D0D0;
+
 
     /* Interactive Elements */
     --button-red-hover-color: #FF8A80;  
@@ -54,6 +56,7 @@ body {
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
     line-height: 1.6;
+    overflow: auto;
 }
 
 /* ----- MAIN ----- */
@@ -146,7 +149,7 @@ header p {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color var(--primary-transition);
+    transition: var(--primary-transition);
     padding: 1em;
     margin: 0.45em 0; 
 }
@@ -157,11 +160,6 @@ header p {
 
 .primary-btn:active {
     background-color: var(--button-blue-active-color);
-}
-
-.primary-btn:disabled {
-    background-color: var(--button-disabled-color-bg);
-    color: var(--button-disabled-color-text);
 }
 
 .btn-icon {
@@ -241,6 +239,28 @@ header p {
 
 .quantity {
     font-size: 0.75em;
+    background-color: var(--light-gray-bg-color); 
+}
+
+.minus-btn, 
+.plus-btn {
+    background-color: var(--light-gray-bg-color); 
+    border: none;
+    color: var(--primary-text-color); 
+    font-size: 1rem;
+    border-radius: var(--small-border-radius);
+    cursor: pointer;
+    transition: var(--primary-transition);
+}
+
+.minus-btn:hover,
+.plus-btn:hover {
+    background-color: var(--dark-gray-bg-color); 
+}
+
+.minus-btn:active,
+.plus-btn:active {
+    background-color: var(--active-dark-gray-bg-color); 
 }
 
 .task-names {
@@ -266,27 +286,8 @@ header p {
     color: var(--primary-text-color);
     font-size: 1.25rem;
 }
-
-.task-quantity 
-.minus-btn, 
-.task-quantity 
-.plus-btn {
-    background-color: var(--light-gray-bg-color); 
-    border: none;
-    color: var(--primary-text-color); 
-    font-size: 1rem;
-    border-radius: var(--small-border-radius);
-    cursor: pointer;
-    transition: background-color var(--primary-transition);
-}
-
-.task-quantity .minus-btn:hover, .task-quantity .plus-btn:hover {
-    background-color: var(--dark-gray-bg-color); 
-}
-
-.task-quantity .quantity {
-    background-color: var(--light-gray-bg-color); 
-}
+ 
+/* ----- NOTES AND TOTAL AMOUNT SECTION ----- */
 
 .notes-total-amount-bottom-row {
     display: block;
@@ -321,11 +322,6 @@ header p {
     margin: 1.5em 0;
 }
 
-button:disabled {
-  background-color: var(--button-disabled-color-bg);
-  color: var(--button-disabled-color-text);
-}
-
 /* ----- FOOTER ----- */
 
 footer {
@@ -337,7 +333,6 @@ footer {
     background-color: var(--light-gray-bg-color);  
     padding: 1em 0;
     text-align: center;
-    
 }
 
 footer a {
@@ -353,14 +348,12 @@ footer a {
 footer a:hover {
     color: var(--footer-link-hover-color);
     border-bottom: 1px solid var(--footer-link-hover-color);
-    transition: var(--primary-transition);
     outline-offset: 2px;
 }
 
 footer a:active {
     background-color: var(--dark-gray-bg-color);
     border-bottom: 1px solid var(--footer-link-hover-color);
-    transition: var(--primary-transition);
 }
 
 .footer-icon {
@@ -428,9 +421,11 @@ menu {
     gap: 1.5em;
 }
 
-.modal-send-invoice-btn {
-    margin: 0;
-    padding: 0;
+.modal-send-invoice-btn,
+#submit-modal-btn {
+    background-color: var(--tertiary-bg-color);
+    color: var(--primary-bg-color);
+    transition: var(--primary-transition);
 }
 
 .modal-send-invoice-btn,
@@ -442,11 +437,6 @@ menu {
     cursor: pointer;
     transition: var(--primary-transition);
     padding: 0.5em 1em;
-}
-
-#submit-modal-btn {
-    background-color: var(--tertiary-bg-color);
-    color: var(--primary-bg-color);
 }
 
 #submit-modal-btn:hover {
@@ -478,7 +468,45 @@ menu {
 
 /* For tablets */
 @media (min-width: 600px) and (max-width: 1024px) {
-    /* Styles for tablets go here */
+
+    body {
+        font-size: 18px;
+    }
+
+    main {
+        width: 80%;
+    }
+
+    .task-list {
+        display: grid;
+        grid-template-columns: 5fr 1fr 1fr 1fr; 
+        grid-template-areas:
+            "taskname removebtn taskquantity tasktotal";
+        gap: 0.25em;
+    }
+    
+  
+    /* FOOTER */
+
+    footer a {
+        font-size: 1em;  
+    }
+
+    /* MODAL STYLING */
+
+    .invoice-modal {
+        min-width: 50vw;
+        min-height: 50vh;
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+
+    .confirmation-modal {
+        min-width: 30vw;
+        min-height: 20vh;
+        max-width: 50vw;
+        max-height: 40vh;
+    }
 }
 
 /* For desktops */

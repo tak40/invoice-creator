@@ -74,9 +74,10 @@ header {
 }
 
 header h1 {
+    font-size: 1.75em;
     text-align: center;
     margin: 0;
-    padding: 0.125em;
+    padding: 0.25em;
 }
 
 header p {
@@ -481,6 +482,14 @@ menu {
         width: 80%;
     }
 
+    header {
+        padding: 0.25em 0;
+    }
+
+    header h1 {
+        font-size: 1.75em;
+    }
+
     .task-list {
         display: grid;
         grid-template-columns: 5fr 1fr 1fr 1fr; 
@@ -531,5 +540,82 @@ menu {
 
 /* For desktops */
 @media (min-width: 1024px) {
-    /* Styles for desktops go here */
+    
+    body {
+        font-size: 20px;
+    }
+
+    main {
+        width: 60%;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+        padding: 1em 0;
+    }
+
+    header h1 {
+        margin: 0;
+        padding: 0;
+    }
+    
+    header p {
+        padding-bottom: 0;
+        font-size: 0.85em;
+        font-style: italic;
+    }
+
+    .task-list {
+        display: grid;
+        grid-template-columns: 5fr 1fr 1fr 1fr; 
+        grid-template-areas:
+            "taskname removebtn taskquantity tasktotal";
+        gap: 0.3em;
+    }
+
+    .input-label {
+        font-size: 0.888em;
+        margin: 0.25em 0;
+    }
+    
+    /* BUTTONS */
+
+    .primary-btn {
+        display: block;
+        width: 20%;
+        margin: 1em auto;
+    }
+
+    .btn-icon {
+        margin-right: 0.25em;
+    }
+
+    .send-invoice-btn {
+        margin-bottom: 2em;
+    }
+  
+    /* FOOTER */
+
+    footer a {
+        font-size: 1em;  
+    }
+
+    /* MODAL STYLING */
+
+    .invoice-modal {
+        min-width: 50vw;
+        min-height: 50vh;
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+
+    .confirmation-modal {
+        min-width: 30vw;
+        min-height: 20vh;
+        max-width: 50vw;
+        max-height: 40vh;
+    }
 }

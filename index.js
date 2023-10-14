@@ -1,4 +1,10 @@
-// Grab the DOM elements
+
+// ===================
+// DOM ELEMENTS SETUP
+// ===================
+
+
+// Main task and invoice related elements
 const taskInput = document.getElementById('task')
 const priceInput = document.getElementById('price')
 const quantityInput = document.getElementById('quantity')
@@ -10,7 +16,7 @@ const taskTotalsDiv = document.getElementById('task-totals')
 const totalAmountDiv = document.getElementById('total-amount')
 const sendInvoiceButton = document.getElementById('send-invoice-btn')
 
-// Grab the modal DOM elements
+// Modal related elements
 const invoiceModal = document.getElementById('invoice-modal')
 const submitModalBtn = document.getElementById('submit-modal-btn')
 const cancelModalBtn = document.getElementById('cancel-modal-btn')
@@ -18,7 +24,11 @@ const confirmationModal = document.getElementById('confirmation-modal')
 const closeConfirmModalBtn = document.getElementById('close-confirm-modal-btn')
 
 
-// Event Listeners
+// ==============
+// EVENT LISTENERS
+// ==============
+
+
 addTaskButton.addEventListener('click', addTask)
 tasksContainerDiv.addEventListener('click', handleTaskEvents)
 sendInvoiceButton.addEventListener('click', handleSendInvoice)
@@ -27,13 +37,16 @@ sendInvoiceButton.addEventListener('click', handleSendInvoice)
 submitModalBtn.addEventListener('click', processInvoice)
 cancelModalBtn.addEventListener('click', () => invoiceModal.close())
 closeConfirmModalBtn.addEventListener('click', () => confirmationModal.close())
-document.addEventListener('mousedown', closeModalOnMouseDownOutside)
+
+// =======================
+// TASK RELATED FUNCTIONS
+// =======================
 
 
-
+// Handle various button events
 function handleTaskEvents(event) {
     // Identify the closest parent task section from the clicked element
-    const taskSection = event.target.closest('.task-list');
+    const taskSection = event.target.closest('.task-list')
 
     let targetElement = event.target
 
@@ -59,8 +72,14 @@ function handleTaskEvents(event) {
     }
 }
 
+// Add a new task to the list
 function addTask() {
+    // Check for valid inputs
     if (taskInput.value.trim() && Number(priceInput.value) > 0 && Number(quantityInput.value) > 0) {
+
+        // Calculate the total for the task and format it to two decimal places
+        const totalForTask = (Number(priceInput.value) * Number(quantityInput.value)).toFixed(2);
+        
         // Create the HTML structure for the task details
         const htmlString = `
             <section class="task-list">
@@ -72,7 +91,7 @@ function addTask() {
                     <button class="plus-btn">+</button>
                 </div>
                 <div class="task-totals">
-                    <p class="total" data-price="${priceInput.value}"><span>$</span>${Number(priceInput.value) * Number(quantityInput.value)}</p>
+                    <p class="total" data-price="${priceInput.value}"><span>$</span>${totalForTask}</p>
                 </div>
             </section>
         `
@@ -89,14 +108,15 @@ function addTask() {
     updateTotalAmount()
 }
 
+// Remove a task entry
 function removeTask(buttonElement) {
     // Remove the closest task-list section to the clicked button
     buttonElement.closest('.task-list').remove()
 
-    // Update the total amount
     updateTotalAmount()
 }
 
+// Update quantity of a task and its total price
 function updateQuantity(taskElement, delta) {
     // Navigate up to the parent task section from the button
     const taskSection = taskElement.closest('.task-list')
@@ -114,7 +134,7 @@ function updateQuantity(taskElement, delta) {
     // If the new quantity is below 0, remove the task and exit the function
     if (newQuantity <= 0) {
         removeTask(taskElement)
-        return;
+        return
     }
 
     // Update the displayed quantity
@@ -133,11 +153,12 @@ function updateQuantity(taskElement, delta) {
     // Update the total for this item
     totalElement.textContent = `$${itemPrice * newQuantity}`
 
-    // Update the overall total amount
     updateTotalAmount()
 }
 
-// Utility Functions
+
+
+// Calculate and display the total amount for all tasks
 function updateTotalAmount() {
     // Variable to hold the sum of all the 'total' elements
     let totalAmount = 0
@@ -153,69 +174,54 @@ function updateTotalAmount() {
     });
 
     // Update the total amount with the dollar sign
-    totalAmountDiv.textContent = `$${totalAmount}`
+    totalAmountDiv.textContent = `$${totalAmount.toFixed(2)}`
 }
 
-// Modal Functions
 
+// ======================
+// MODAL RELATED FUNCTIONS
+// ======================
+
+
+// Handle sending the invoice
 function handleSendInvoice() {
     // Check if any tasks are present
     const tasks = tasksContainerDiv.querySelectorAll('.task-list');
     if (tasks.length > 0) {
         // Show the invoice modal if tasks are present
-        invoiceModal.showModal();
+        invoiceModal.showModal()
     } else {
-        // Handle the situation when no tasks are added (e.g., alert the user)
-        alert("Please add tasks before sending an invoice.");
+        alert("Please add tasks before sending an invoice.")
     }
 }
 
+// Clear all tasks from the list
 function clearAllTasks() {
     // Remove all tasks from the task list
     while(tasksContainerDiv.firstChild) {
         tasksContainerDiv.removeChild(tasksContainerDiv.firstChild)
     }
-    // Update the total amount to reflect the empty task list
     updateTotalAmount()
 }
 
+// Handle the invoice submission process
 function processInvoice() {
     // Grab the values from the email and message fields in the modal
-    const emailValue = document.getElementById('email').value.trim();
-    const messageValue = document.getElementById('message').value.trim();
+    const emailValue = document.getElementById('email').value.trim()
+    const messageValue = document.getElementById('message').value.trim()
 
     // Check if the values are not empty
     if (emailValue && messageValue) {
         // Clear all tasks, close the invoice modal and show the confirmation message
-        clearAllTasks();
-        invoiceModal.close();
-        confirmationModal.showModal();
+        clearAllTasks()
+        invoiceModal.close()
+        confirmationModal.showModal()
     } else {
-        alert("Please ensure the email and message fields are filled out.");
+        alert("Please ensure the email and message fields are filled out.")
     }
 }
 
-
-function closeModalOnMouseDownOutside(event) {
-    console.log("Mouse down detected");
-
-    if (invoiceModal.hasAttribute('open')) {
-        console.log("Invoice modal is open");
-        if (!invoiceModal.contains(event.target)) {
-            console.log("Click was outside of invoice modal");
-            invoiceModal.close();
-        }
-    }
-
-    if (confirmationModal.hasAttribute('open')) {
-        console.log("Confirmation modal is open");
-        if (!confirmationModal.contains(event.target)) {
-            console.log("Click was outside of confirmation modal");
-            confirmationModal.close();
-        }
-    }
-}
-
+// Helper function for closing modals on outside click or specific button click
 function closeDialogOnClickOutside(dialog, cancelBtnId) {
     dialog.addEventListener("click", e => {
         const dialogDimensions = dialog.getBoundingClientRect()
@@ -231,6 +237,6 @@ function closeDialogOnClickOutside(dialog, cancelBtnId) {
     })
 }
 
+// Close modals on clicking outside
 closeDialogOnClickOutside(invoiceModal, "cancel-modal-btn")
 closeDialogOnClickOutside(confirmationModal, "close-confirm-modal-btn")
-

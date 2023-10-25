@@ -121,7 +121,6 @@ function updateQuantity(taskElement, delta) {
     // Navigate up to the parent task section from the button
     const taskSection = taskElement.closest('.task-list')
 
-    // Grab the quantity and total elements
     const quantityElement = taskSection.querySelector('.quantity')
     const totalElement = taskSection.querySelector('.total')
     
@@ -140,7 +139,6 @@ function updateQuantity(taskElement, delta) {
     // Update the displayed quantity
     quantityElement.textContent = newQuantity
 
-    // Get the minus button
     const minusBtn = taskSection.querySelector('.minus-btn')
 
     // Check if new quantity is 1 and update the button content accordingly
@@ -163,7 +161,6 @@ function updateTotalAmount() {
     // Variable to hold the sum of all the 'total' elements
     let totalAmount = 0
 
-    // Grab all the 'total' elements
     const totalElements = document.querySelectorAll('.total')
 
     // Loop through each 'total' element and add its value to the totalAmount variable
@@ -206,6 +203,7 @@ function clearAllTasks() {
 
 // Handle the invoice submission process
 function processInvoice() {
+    
     // Grab the values from the email and message fields in the modal
     const emailValue = document.getElementById('email').value.trim()
     const messageValue = document.getElementById('message').value.trim()

@@ -1,4 +1,24 @@
-# Invoice Creator
+# Invoice Creator: Bootcamp Solo Project
+
+![Invoice Creator Screenshot](<path-to-screenshot-from-figma>)
+
+## Overview
+
+This project is a solo project from the Scrimba bootcamp, made entirely from scratch. Its primary purpose is to enable users to generate invoices swiftly. Emphasis has been laid on the usage of vanilla JavaScript, HTML, and CSS, providing a clean and straightforward web application experience.
+
+## Features
+
+- **Dynamic Task Addition**: Quickly add tasks with associated costs.
+- **Live Array Data Display**: Interface updates in real-time as tasks are added.
+- **Total Amount Calculation**: Automatic update of the invoice amount as tasks are appended.
+- **Invoice Reset Option**: Simulate sending the invoice and reset for the next one.
+
+
+   
+
+
+
+
 
 Quick start:
 

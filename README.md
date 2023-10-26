@@ -40,7 +40,8 @@ The design blueprints for this project are hosted on Figma. Interested readers c
 
 During the early stages of the project, I aimed to get a working version up and running. I frequently switched between Scrimba's materials and other online guides. This back-and-forth, along with getting to grips with JavaScript, often left me puzzled and stalled.
 
-- Initial [Scrim](https://scrimba.com/scrim/coa53415a933225d86da9b633) for the project 
+Initial [Scrim](https://scrimba.com/scrim/coa53415a933225d86da9b633) for the project 
+
 ![Initial Version Screenshot](./images/desktop-initial.png)
 
 ## Refactoring Journey

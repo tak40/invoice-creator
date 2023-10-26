@@ -9,6 +9,9 @@
 - [Initial Challenges](#initial-challenges)
 - [Refactoring Journey](#refactoring-journey)
 - [Key Enhancements](#key-enhancements)
+- [Local Development](#local-development)
+- [About Scrimba](#about-scrimba)
+
 
 ## Overview
 
@@ -40,7 +43,7 @@ The design blueprints for this project are hosted on Figma. Interested readers c
 
 During the early stages of the project, I aimed to get a working version up and running. I frequently switched between Scrimba's materials and other online guides. This back-and-forth, along with getting to grips with JavaScript, often left me puzzled and stalled.
 
-Initial [Scrim](https://scrimba.com/scrim/coa53415a933225d86da9b633) for the project 
+- Initial [Scrim](https://scrimba.com/scrim/coa53415a933225d86da9b633) for the project 
 
 ![Initial Version Screenshot](./images/desktop-initial.png)
 
@@ -65,6 +68,9 @@ Initial [Scrim](https://scrimba.com/scrim/coa53415a933225d86da9b633) for the pro
 - **Beyond Stretch Goals**: The project was constantly evolved to not just meet but surpass the stretch goals, aiming for a production-grade web application standard.
 
 
+
+## Local Development
+
 Quick start:
 
 ```
@@ -73,6 +79,7 @@ $ npm start
 ````
 
 Head over to https://vitejs.dev/ to learn more about using vite
+
 ## About Scrimba
 
 At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜

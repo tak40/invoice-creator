@@ -63,6 +63,37 @@ During the early stages of the project, I aimed to get a working version up and 
 
 ![Initial Version Screenshot](./images/desktop-initial.png)
 
+To give you an idea, here's a glimpse of my initial "spaghetti code" (haha):
+
+```javascript
+// This function displays a selected task in the task list.
+function displaySelectedTask(taskName, taskPrice) {
+    const namesSection = document.getElementById('task-names');
+    const pricesSection = document.getElementById('task-prices');
+    const newTaskNameParagraph = document.createElement('p');
+    const newTaskNameSpan = document.createElement('span');
+
+    newTaskNameSpan.classList.add('task-name-style');
+    newTaskNameSpan.textContent = taskName;
+
+    newTaskNameParagraph.appendChild(newTaskNameSpan);
+    namesSection.appendChild(newTaskNameParagraph);
+
+    const newTaskPriceParagraph = document.createElement('p');
+    const dollarSignSpan = document.createElement('span');
+    dollarSignSpan.classList.add('dollar-sign-style');
+    dollarSignSpan.textContent = "$";
+    newTaskPriceParagraph.appendChild(dollarSignSpan);
+
+    const newTaskPriceSpan = document.createElement('span');
+    newTaskPriceSpan.classList.add('task-price-style'); 
+    newTaskPriceSpan.textContent = taskPrice;
+    newTaskPriceParagraph.appendChild(newTaskPriceSpan);
+    pricesSection.appendChild(newTaskPriceParagraph); 
+}
+```
+
+
 ## Refactoring Journey
 
 ### The refactoring was influenced by three primary reasons:

@@ -1,25 +1,18 @@
-# Invoice Creator: Sccrimba Bootcamp Solo Project
+# Invoice Creator: Scrimba Bootcamp Solo Project
 
 ## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
-    - [Initial Requirements](#initial-requirements)
-    - [Stretch Goals](#stretch-goals)
+  - [Initial Requirements](#initial-requirements)
+  - [Stretch Goals](#stretch-goals)
 - [Design Mockups](#design-mockups)
-- [Initial Development Focus and Goals](#initial-development-focus-and-goals)
-- [Key Learnings from Initial Version](#key-learnings-from-initial-version)
+- [Initial Challenges](#initial-challenges)
 - [Refactoring Journey](#refactoring-journey)
-- [What Led to Refactoring](#what-led-to-refactoring)
-- [Strategy and Steps](#strategy-and-steps)
-- [Challenges Faced](#challenges-faced)
-- [Learnings from Refactoring](#learnings-from-refactoring)
-- [Comparing Initial Goals to What Was Achieved](#comparing-initial-goals-to-what-was-achieved)
-
+- [Key Enhancements](#key-enhancements)
 
 ## Overview
 
-This project is a solo project from the Scrimba bootcamp, made entirely from scratch. Its primary purpose is to enable users to generate invoices swiftly. Emphasis has been laid on the usage of vanilla JavaScript, HTML, and CSS, providing a clean and straightforward web application experience.
-
+This project is a solo endeavor from the Scrimba bootcamp, conceived and built from the ground up. Its core purpose is to facilitate users in generating invoices efficiently. The application leans heavily on vanilla JavaScript, HTML, and CSS, ensuring a seamless and intuitive web experience.
 
 ## Requirements
 
@@ -38,40 +31,36 @@ This project is a solo project from the Scrimba bootcamp, made entirely from scr
 - Add new task and cost to the array and update task list
 - Remove tasks
 
-
+- 
 ## Design Mockups
-You can view the design mockups for this project on Figma using the following link:  
-[Invoice Creator Design Mockups on Figma](https://www.figma.com/file/ejHmm5h6VhSW7dQgRgOmlk/Invoice-Creator?node-id=0%3A1&t=nxSAEKc5XGTtzEmR-1)
 
+The design blueprints for this project are hosted on Figma. Interested readers can peruse them [here](https://www.figma.com/file/ejHmm5h6VhSW7dQgRgOmlk/Invoice-Creator?node-id=0%3A1&t=nxSAEKc5XGTtzEmR-1).
 
-## Learnings from Refactoring
+## Initial Challenges
 
-During the initial stages of development, my primary focus was navigating through the foundational requirements. Implementing the logic using JavaScript proved to be quite challenging. Given the intricacies of the requirements, I found myself going back and forth, often iterating and refining my approach.
+During the early stages of the project, I aimed to get a working version up and running. I frequently switched between Scrimba's materials and other online guides. This back-and-forth, along with getting to grips with JavaScript, often left me puzzled and stalled.
 
-While I aspired to achieve the stretch goals, the complexity of the basic requirements necessitated most of my attention and time. My efforts were primarily concentrated on understanding the intricacies of JavaScript and how to best apply them to meet the project's specifications.
+![Initial Version Screenshot](./images/desktop-initial.png)
 
-It was a continuous learning journey, where I constantly found opportunities to better my understanding of the language and its application in web development.
+## Refactoring Journey
 
-## Key Learnings from Initial Version
+### The refactoring was influenced by three primary reasons:
+1. The existing code, while functional, was far from optimal in terms of readability and structure.
+2. The stretch goals, initially perceived as challenging, mandated a more organized approach.
+3. "How can I elevate this bootcamp project?"
 
-### Setting the Goals:
-After spending a few months reflecting on the initial version, I was naturally inclined to achieve all the stretch goals. However, beyond just accomplishing these goals, I realized that my code, despite being functional, was convoluted. This motivated me to not only achieve the additional features but also to enhance the codebase's readability and organization.
+### The main goals during this phase were:
+- Streamlining the JavaScript logic.
+- Ensuring mobile responsiveness.
+- Achieving the outlined stretch goals.
+- Formulating and realizing personal stretch goals.
 
-### Refactoring:
-The primary challenge was breaking down the existing code and refactoring it. I wanted to transition from a working mess to a clean, readable, and maintainable codebase.
+## Key Enhancements
 
-### Design Inspiration:
-While redesigning the app's interface, I took inspiration from popular web applications. Notably, I was influenced by the DoorDash app's design, specifically their quantity changer with '-' and '+' signs. A unique touch I added was the transformation of the '-' icon to a trash can when the quantity reached one. Furthermore, I revamped the color scheme to create a more intuitive user experience.
-
-### Enhancements:
-Beyond the initial requirements, I introduced features allowing users to input any task, quantity, and price. This move transformed the app from a static list manager to a dynamic task and invoice generator.
-
-### Implementing Modals:
-As I neared the completion of these updates, I had the opportunity to attend a workshop at Scrimba's bootcamp, focusing on implementing modals using the `<dialog>` tag. This knowledge was immediately integrated into the project, adding another layer of sophistication to the user experience.
-
-### Beyond the Stretch Goals:
-My journey with this project taught me the essence of continuous learning and iterative development. I realized that the bounds of a project aren't just defined by its goals, but by one's vision and ambition. The challenge was not just to meet the stretch goals but to elevate this bootcamp project to match the standards of a production-grade web application.
-
+- **Redesigning**: Influenced by the user-friendly design elements of popular web apps like DoorDash, the UI was overhauled to be more intuitive.
+- **Dynamic Input**: Transitioned from a static list manager to a dynamic task and invoice generator, where users could input tasks, quantities, and prices.
+- **Modal Implementation**: Integrated modals using the `<dialog>` tag post a workshop at Scrimba, adding a layer of sophistication.
+- **Beyond Stretch Goals**: The project was constantly evolved to not just meet but surpass the stretch goals, aiming for a production-grade web application standard.
 
 
 Quick start:

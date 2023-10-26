@@ -81,7 +81,35 @@ During the early stages of the project, I aimed to get a working version up and 
 
 - **Redesigning**: Influenced by the user-friendly design elements of popular web apps like DoorDash, the UI was overhauled to be more intuitive.
 - **Dynamic Input**: Transitioned from a static list manager to a dynamic task and invoice generator, where users could input tasks, quantities, and prices.
-- **Modal Implementation**: Integrated modals using the `<dialog>` tag post a workshop at Scrimba, adding a layer of sophistication.
+- **Modal Implementation**: Integrated modals using the `<dialog>` tag post a workshop at Scrimba, adding a layer of sophistication. 
+
+    Here's a glimpse into the modal structure:
+
+    ```html
+        <!-- Invoice Modal -->
+    <dialog id="invoice-modal" class="invoice-modal">
+        <form method="dialog">
+            <fieldset>
+                <legend>Send Invoice</legend>
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="modal-email-input" required>
+                <label for="message">Message:</label>
+                <textarea id="message" rows="4" required></textarea>
+                <menu>
+                    <button id="submit-modal-btn" class="modal-btn modal-send-invoice-btn" type="submit">Send Invoice</button>
+                    <button id="cancel-modal-btn" class="modal-btn modal-cancel-btn" type="reset">Cancel</button>
+                </menu>
+            </fieldset>
+        </form>
+    </dialog>
+
+    <!-- Confirmation Modal -->
+    <dialog id="confirmation-modal" class="confirmation-modal">
+        <p>Invoice Sent Successfully!</p>
+        <button id="close-confirm-modal-btn" class="modal-btn modal-close-btn">OK</button>
+    </dialog>    
+    ```
+
 - **Beyond Stretch Goals**: The project was constantly evolved to not just meet but surpass the stretch goals, aiming for a production-grade web application standard.
 
 

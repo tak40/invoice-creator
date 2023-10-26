@@ -109,8 +109,14 @@ function displaySelectedTask(taskName, taskPrice) {
 
 ## Key Enhancements
 
-- **Redesigning**: Influenced by the user-friendly design elements of popular web apps like DoorDash, the UI was overhauled to be more intuitive.
-- **Dynamic Input**: Transitioned from a static list manager to a dynamic task and invoice generator, where users could input tasks, quantities, and prices.
+- **E-commerce Inspired Design**: Drawing inspiration from prominent e-commerce platforms, including the likes of DoorDash and others, the user interface was redesigned for a more intuitive and familiar feel. Below is an image showcasing the e-commerce inspired design:
+
+![E-commerce Inspired Design](./images/doordash.png) 
+
+- **Dynamic Task Entry**: The task entry section underwent a major revamp. Now, not only can users input tasks, but they also have the capability to specify the price and quantity. This dynamic entry format simplifies the invoice creation process, as depicted in the image above.
+
+![Dynamic Task Entry](./images/task-entry.png) 
+
 - **Modal Implementation**: Integrated modals using the `<dialog>` tag post a workshop at Scrimba, adding a layer of sophistication. 
 
     Here's a glimpse into the modal structure:

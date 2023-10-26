@@ -25,6 +25,8 @@ Deployed on: 06-09-2023
 
 Last Updated: 10-26-2023
 
+[Live Demo](https://invoice-creator-tak40.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/645385d2-1179-4724-a26f-b38f4ca94fdd/deploy-status)](https://app.netlify.com/sites/invoice-creator-tak40/deploys)
 
 Here's a glimpse of the current state of the project:

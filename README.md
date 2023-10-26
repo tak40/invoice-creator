@@ -2,13 +2,14 @@
 
 ## Table of Contents
 - [Overview](#overview)
-  - [Current Version](#current-version)
+    - [Current Version](#current-version)
 - [Requirements](#requirements)
-  - [Initial Requirements](#initial-requirements)
-  - [Stretch Goals](#stretch-goals)
+    - [Initial Requirements](#initial-requirements)
+    - [Stretch Goals](#stretch-goals)
 - [Design Mockups](#design-mockups)
 - [Initial Challenges](#initial-challenges)
 - [Refactoring Journey](#refactoring-journey)
+    - [My Blueprint for JavaScript Refactoring](#my-blueprint-for-javascript-refactoring)
 - [Key Enhancements](#key-enhancements)
 - [Local Development](#local-development)
 - [About Scrimba](#about-scrimba)
@@ -106,6 +107,17 @@ function displaySelectedTask(taskName, taskPrice) {
 - Ensuring mobile responsiveness.
 - Achieving the outlined stretch goals.
 - Formulating and realizing personal stretch goals.
+
+### My Blueprint for JavaScript Refactoring
+
+After thoughtful consideration, I established a blueprint for my refactoring process (as of now):
+
+1. Get the DOM: Identify the main elements to manipulate.
+2. Event Handlers: Pinpoint interactive elements like buttons or links.
+3. Core Functions: Define essential functions based on the DOM and interactions.
+4. Separate Concerns: Break down and categorize functions for clarity and maintainability.
+
+By following this structured approach, I was able to achieve a more efficient and organized application.
 
 ## Key Enhancements
 

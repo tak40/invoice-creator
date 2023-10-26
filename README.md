@@ -44,6 +44,34 @@ You can view the design mockups for this project on Figma using the following li
 [Invoice Creator Design Mockups on Figma](https://www.figma.com/file/ejHmm5h6VhSW7dQgRgOmlk/Invoice-Creator?node-id=0%3A1&t=nxSAEKc5XGTtzEmR-1)
 
 
+## Initial Development Focus and Goals
+
+During the initial stages of development, my primary focus was navigating through the foundational requirements. Implementing the logic using JavaScript proved to be quite challenging. Given the intricacies of the requirements, I found myself going back and forth, often iterating and refining my approach.
+
+While I aspired to achieve the stretch goals, the complexity of the basic requirements necessitated most of my attention and time. My efforts were primarily concentrated on understanding the intricacies of JavaScript and how to best apply them to meet the project's specifications.
+
+It was a continuous learning journey, where I constantly found opportunities to better my understanding of the language and its application in web development.
+
+## Key Learnings from Initial Version
+
+### Setting the Goals:
+After spending a few months reflecting on the initial version, I was naturally inclined to achieve all the stretch goals. However, beyond just accomplishing these goals, I realized that my code, despite being functional, was convoluted. This motivated me to not only achieve the additional features but also to enhance the codebase's readability and organization.
+
+### Refactoring:
+The primary challenge was breaking down the existing code and refactoring it. I wanted to transition from a working mess to a clean, readable, and maintainable codebase.
+
+### Design Inspiration:
+While redesigning the app's interface, I took inspiration from popular web applications. Notably, I was influenced by the DoorDash app's design, specifically their quantity changer with '-' and '+' signs. A unique touch I added was the transformation of the '-' icon to a trash can when the quantity reached one. Furthermore, I revamped the color scheme to create a more intuitive user experience.
+
+### Enhancements:
+Beyond the initial requirements, I introduced features allowing users to input any task, quantity, and price. This move transformed the app from a static list manager to a dynamic task and invoice generator.
+
+### Implementing Modals:
+As I neared the completion of these updates, I had the opportunity to attend a workshop at Scrimba's bootcamp, focusing on implementing modals using the `<dialog>` tag. This knowledge was immediately integrated into the project, adding another layer of sophistication to the user experience.
+
+### Beyond the Stretch Goals:
+My journey with this project taught me the essence of continuous learning and iterative development. I realized that the bounds of a project aren't just defined by its goals, but by one's vision and ambition. The challenge was not just to meet the stretch goals but to elevate this bootcamp project to match the standards of a production-grade web application.
+
 
 
 Quick start:

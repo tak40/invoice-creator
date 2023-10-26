@@ -44,7 +44,7 @@ You can view the design mockups for this project on Figma using the following li
 [Invoice Creator Design Mockups on Figma](https://www.figma.com/file/ejHmm5h6VhSW7dQgRgOmlk/Invoice-Creator?node-id=0%3A1&t=nxSAEKc5XGTtzEmR-1)
 
 
-## Initial Development Focus and Goals
+## Learnings from Refactoring
 
 During the initial stages of development, my primary focus was navigating through the foundational requirements. Implementing the logic using JavaScript proved to be quite challenging. Given the intricacies of the requirements, I found myself going back and forth, often iterating and refining my approach.
 

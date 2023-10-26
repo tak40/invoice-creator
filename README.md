@@ -1,6 +1,20 @@
-# Invoice Creator: Bootcamp Solo Project
+# Invoice Creator: Sccrimba Bootcamp Solo Project
 
-![Invoice Creator Screenshot](<path-to-screenshot-from-figma>)
+## Table of Contents
+- [Overview](#overview)
+- [Requirements](#requirements)
+    - [Initial Requirements](#initial-requirements)
+    - [Stretch Goals](#stretch-goals)
+- [Design Mockups](#design-mockups)
+- [Initial Development Focus and Goals](#initial-development-focus-and-goals)
+- [Key Learnings from Initial Version](#key-learnings-from-initial-version)
+- [Refactoring Journey](#refactoring-journey)
+- [What Led to Refactoring](#what-led-to-refactoring)
+- [Strategy and Steps](#strategy-and-steps)
+- [Challenges Faced](#challenges-faced)
+- [Learnings from Refactoring](#learnings-from-refactoring)
+- [Comparing Initial Goals to What Was Achieved](#comparing-initial-goals-to-what-was-achieved)
+
 
 ## Overview
 

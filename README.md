@@ -51,7 +51,6 @@ Here's a glimpse of the current state of the project:
 - Add new task and cost to the array and update task list
 - Remove tasks
 
-- 
 ## Design Mockups
 
 The design blueprints for this project are hosted on Figma. Interested readers can peruse them [here](https://www.figma.com/file/ejHmm5h6VhSW7dQgRgOmlk/Invoice-Creator?node-id=0%3A1&t=nxSAEKc5XGTtzEmR-1).

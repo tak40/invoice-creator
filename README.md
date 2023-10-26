@@ -20,16 +20,28 @@
 
 This project is a solo project from the Scrimba bootcamp, made entirely from scratch. Its primary purpose is to enable users to generate invoices swiftly. Emphasis has been laid on the usage of vanilla JavaScript, HTML, and CSS, providing a clean and straightforward web application experience.
 
-## Features
 
-- **Dynamic Task Addition**: Quickly add tasks with associated costs.
-- **Live Array Data Display**: Interface updates in real-time as tasks are added.
-- **Total Amount Calculation**: Automatic update of the invoice amount as tasks are appended.
-- **Invoice Reset Option**: Simulate sending the invoice and reset for the next one.
+## Requirements
+
+### Initial Requirements
+- Array to hold requested tasks
+- Buttons to add a task to array
+- Display data from array; should update when the array changes
+- Charge only once for each task
+- Update total amount each time a task gets added
+- Button to "send invoice" (reset)
+
+### Stretch Goals
+- Enter tasks
+- Text field for task
+- Select menu with cost options
+- Add new task and cost to the array and update task list
+- Remove tasks
 
 
-   
-
+## Design Mockups
+You can view the design mockups for this project on Figma using the following link:  
+[Invoice Creator Design Mockups on Figma](https://www.figma.com/file/ejHmm5h6VhSW7dQgRgOmlk/Invoice-Creator?node-id=0%3A1&t=nxSAEKc5XGTtzEmR-1)
 
 
 

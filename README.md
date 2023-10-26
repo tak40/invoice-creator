@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Overview](#overview)
+  - [Current Version](#current-version)
 - [Requirements](#requirements)
   - [Initial Requirements](#initial-requirements)
   - [Stretch Goals](#stretch-goals)
@@ -16,6 +17,22 @@
 ## Overview
 
 This project is a solo endeavor from the Scrimba bootcamp, conceived and built from the ground up. Its core purpose is to facilitate users in generating invoices efficiently. The application leans heavily on vanilla JavaScript, HTML, and CSS, ensuring a seamless and intuitive web experience.
+
+### Current Version
+
+Deployed on: 06-09-2023
+
+Last Updated: 10-26-2023
+
+Here's a glimpse of the current state of the project:
+
+**Desktop View**:
+
+![Desktop Current Version](./images/desktop.png)
+
+**Mobile View**:
+
+![Mobile Current Version](./images/mobile.png)
 
 ## Requirements
 

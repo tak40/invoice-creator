@@ -44,20 +44,20 @@
             <section class="task-entry-section">
                 <form id="task-entry-form">
                     <div class="input-group">
-                        <label for="task" class="input-label">
+                        <label for="task">
                             <i class="fa-solid fa-tasks"></i>
                             Task:
                         </label>
                         <input
                             type="text"
                             id="task"
-                            class="input-border task-input"
+                            class="task-input"
                             placeholder="Center a div"
                         />
                     </div>
                     <div class="price-quantity-container">
                         <div class="input-group">
-                            <label for="price" class="input-label">
+                            <label for="price">
                                 <i class="fa-solid fa-dollar-sign"></i>
                                 Price:
                             </label>
@@ -65,12 +65,12 @@
                                 type="number"
                                 min="0"
                                 id="price"
-                                class="input-border price-input"
+                                class="price-input"
                                 placeholder="0"
                             />
                         </div>
                         <div class="input-group">
-                            <label for="quantity" class="input-label">
+                            <label for="quantity">
                                 <i class="fa-solid fa-calculator"></i>
                                 Quantity:
                             </label>
@@ -78,7 +78,7 @@
                                 type="number"
                                 min="0"
                                 id="quantity"
-                                class="input-border quantity-input"
+                                class="quantity-input"
                                 placeholder="0"
                             />
                         </div>
@@ -86,7 +86,7 @@
                     <button
                         type="submit"
                         id="add-task-btn"
-                        class="input-border add-task-btn primary-btn"
+                        class="add-task-btn primary-btn"
                     >
                         <i
                             class="fa-solid fa-plus btn-icon add-task-btn-icon"
@@ -176,7 +176,12 @@
                         required
                     />
                     <label for="message">Message:</label>
-                    <textarea id="message" class="modal-input" rows="4" required></textarea>
+                    <textarea
+                        id="message"
+                        class="modal-input"
+                        rows="4"
+                        required
+                    ></textarea>
                     <menu>
                         <button
                             id="submit-modal-btn"

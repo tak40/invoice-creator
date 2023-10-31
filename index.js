@@ -117,7 +117,7 @@ function addTask() {
     updateTotalAmount()
 }
 
-// Handle the form submission 
+// Handle the form submission
 function handleTaskEntry(event) {
     event.preventDefault()
     addTask()
@@ -215,8 +215,10 @@ function clearAllTasks() {
 // Handle the invoice submission process
 function processInvoice() {
     // Grab the values from the email and message fields in the modal
-    const emailValue = document.getElementById("email").value.trim()
-    const messageValue = document.getElementById("message").value.trim()
+    const emailField = document.getElementById("email")
+    const messageField = document.getElementById("message")
+    const emailValue = emailField.value.trim()
+    const messageValue = messageField.value.trim()
 
     // Check if the values are not empty
     if (emailValue && messageValue) {
@@ -224,6 +226,10 @@ function processInvoice() {
         clearAllTasks()
         invoiceModal.close()
         confirmationModal.showModal()
+
+        // Clear the email and message fields
+        emailField.value = ""
+        messageField.value = ""
     } else {
         alert("Please ensure the email and message fields are filled out.")
     }

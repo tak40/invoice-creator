@@ -26,7 +26,7 @@ const closeConfirmModalBtn = document.getElementById("close-confirm-modal-btn")
 // EVENT LISTENERS
 // ==============
 
-addTaskButton.addEventListener("click", addTask)
+addTaskButton.addEventListener("submit", addTask)
 tasksContainerDiv.addEventListener("click", handleTaskEvents)
 sendInvoiceButton.addEventListener("click", handleSendInvoice)
 taskEntryForm.addEventListener("submit", handleTaskEntry)
@@ -111,6 +111,7 @@ function addTask() {
         priceInput.value = ""
         quantityInput.value = ""
     } else {
+        console.log(taskInput.value, priceInput.value, quantityInput.value)
         alert("Please enter a valid task, price, and quantity")
     }
     updateTotalAmount()

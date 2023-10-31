@@ -1,138 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- Basic meta tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <!-- Basic meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Title -->
+        <title>Invoice Creator</title>
 
-    <!-- Title -->
-    <title>Invoice Creator</title>
+        <!-- Styles and Fonts -->
+        <link rel="stylesheet" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Styles and Fonts -->
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+        <!-- Normalize CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        />
 
-<body>
-    <header>
-        <h1>Invoice Creator</h1>
-        <p>Thanks for choosing GoodCorp, LLC!</p>
-    </header>
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
 
-    <main>
+    <body>
+        <header>
+            <h1>Invoice Creator</h1>
+            <p>Thanks for choosing GoodCorp, LLC!</p>
+        </header>
 
-        <!-- Task Entry Section -->
-        <section class="task-entry-section">
-            <div class="input-group">
-                <span class="input-label">
-                    <i class="fa-solid fa-tasks"></i>
-                    Task:
-                </span>
-                <input type="text" id="task" class="task-input" placeholder="Center a div">
-            </div>
-            <div class="price-quantity-container">
-                <div class="input-group">
-                    <span class="input-label">
-                        <i class="fa-solid fa-dollar-sign"></i>
-                        Price:
-                    </span>
-                    <input type="number" min="0" id="price" class="price-input" placeholder="0">
+        <main>
+            <!-- Task Entry Section -->
+            <section class="task-entry-section">
+                <form id="task-entry-form">
+                    <div class="input-group">
+                        <label for="task" class="input-label">
+                            <i class="fa-solid fa-tasks"></i>
+                            Task:
+                        </label>
+                        <input
+                            type="text"
+                            id="task"
+                            class="task-input"
+                            placeholder="Center a div"
+                        />
+                    </div>
+                    <div class="price-quantity-container">
+                        <div class="input-group">
+                            <label for="price" class="input-label">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                Price:
+                            </label>
+                            <input
+                                type="number"
+                                min="0"
+                                id="price"
+                                class="price-input"
+                                placeholder="0"
+                            />
+                        </div>
+                        <div class="input-group">
+                            <label for="quantity" class="input-label">
+                                <i class="fa-solid fa-calculator"></i>
+                                Quantity:
+                            </label>
+                            <input
+                                type="number"
+                                min="0"
+                                id="quantity"
+                                class="quantity-input"
+                                placeholder="0"
+                            />
+                        </div>
+                    </div>
+                    <button
+                        type="submit"
+                        id="add-task-btn"
+                        class="add-task-btn primary-btn"
+                    >
+                        <i
+                            class="fa-solid fa-plus btn-icon add-task-btn-icon"
+                        ></i>
+                        Add Task
+                    </button>
+                </form>
+            </section>
+
+            <!-- Task Display Section -->
+            <section>
+                <div class="task-header">
+                    <div class="task-top-row">
+                        <p>TASK</p>
+                        <p>TOTAL</p>
+                    </div>
+                    <div id="tasks-container" class="tasks-container">
+                        <!-- Task items will be dynamically rendered here -->
+                    </div>
                 </div>
-                <div class="input-group">
-                    <span class="input-label">
-                        <i class="fa-solid fa-calculator"></i>
-                        Quantity:
-                    </span>
-                    <input type="number" min="0" id="quantity" class="quantity-input" placeholder="0">
+
+                <!-- Notes and Total Amount Section -->
+                <div class="notes-total-amount-header">
+                    <div class="notes-total-amount-top-row">
+                        <p>NOTES</p>
+                        <p>TOTAL AMOUNT</p>
+                    </div>
+                    <div class="notes-total-amount-bottom-row">
+                        <p class="payment-methods-note">
+                            We accept cash, credit card, or PayPal.
+                        </p>
+                        <div id="total-amount" class="total-amount">$0</div>
+                    </div>
                 </div>
+            </section>
+
+            <!-- Send Invoice Section -->
+            <div class="task-list-btn-container">
+                <button
+                    class="send-invoice-btn primary-btn"
+                    id="send-invoice-btn"
+                >
+                    <i class="fa-solid fa-envelope btn-icon"></i>
+                    Send Invoice
+                </button>
             </div>
-            <button id="add-task-btn" class="add-task-btn primary-btn">
-                <i class="fa-solid fa-plus btn-icon add-task-btn-icon"></i>
-                Add Task
+        </main>
+
+        <!-- Footer with Social Links -->
+        <footer>
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+            >
+                <i class="fab fa-github footer-icon"></i>GitHub
+            </a>
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+            >
+                <i class="fa-brands fa-square-x-twitter footer-icon"></i>X
+            </a>
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
+                <i class="fab fa-linkedin footer-icon"></i>LinkedIn
+            </a>
+        </footer>
+
+        <!-- Invoice Modal -->
+        <dialog id="invoice-modal" class="invoice-modal">
+            <form method="dialog">
+                <fieldset>
+                    <legend>Send Invoice</legend>
+                    <label for="email">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        class="modal-email-input"
+                        required
+                    />
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="4" required></textarea>
+                    <menu>
+                        <button
+                            id="submit-modal-btn"
+                            class="modal-btn modal-send-invoice-btn"
+                            type="submit"
+                        >
+                            Send Invoice
+                        </button>
+                        <button
+                            id="cancel-modal-btn"
+                            class="modal-btn modal-cancel-btn"
+                            type="reset"
+                        >
+                            Cancel
+                        </button>
+                    </menu>
+                </fieldset>
+            </form>
+        </dialog>
+
+        <!-- Confirmation Modal -->
+        <dialog id="confirmation-modal" class="confirmation-modal">
+            <p>Invoice Sent Successfully!</p>
+            <button
+                id="close-confirm-modal-btn"
+                class="modal-btn modal-close-btn"
+            >
+                OK
             </button>
-        </section>
+        </dialog>
 
-        <!-- Task Display Section -->
-        <section>
-            <div class="task-header">
-                <div class='task-top-row'>
-                    <p>TASK</p>
-                    <p>TOTAL</p>
-                </div>
-                <div id="tasks-container" class="tasks-container">
-                    <!-- Task items will be dynamically rendered here -->
-                </div>            
-            </div>    
-            
-            <!-- Notes and Total Amount Section -->
-            <div class="notes-total-amount-header">
-                <div class='notes-total-amount-top-row'>
-                    <p>NOTES</p>
-                    <p>TOTAL AMOUNT</p>
-                </div>
-                <div class='notes-total-amount-bottom-row'>
-                    <p class="payment-methods-note">We accept cash, credit card, or PayPal.</p>
-                    <div id="total-amount" class='total-amount'>$0</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Send Invoice Section -->
-        <div class="task-list-btn-container">
-            <button class="send-invoice-btn primary-btn" id='send-invoice-btn'>
-                <i class="fa-solid fa-envelope btn-icon"></i>
-                Send Invoice
-            </button>
-        </div>
-    </main>
-
-    <!-- Footer with Social Links -->
-    <footer>
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fab fa-github footer-icon"></i>GitHub
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
-            <i class="fa-brands fa-square-x-twitter footer-icon"></i>X
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin footer-icon"></i>LinkedIn
-        </a>
-    </footer>    
-
-    <!-- Invoice Modal -->
-    <dialog id="invoice-modal" class="invoice-modal">
-        <form method="dialog">
-            <fieldset>
-                <legend>Send Invoice</legend>
-                <label for="email">Email:</label>
-                <input type="email" id="email" class="modal-email-input" required>
-                <label for="message">Message:</label>
-                <textarea id="message" rows="4" required></textarea>
-                <menu>
-                    <button id="submit-modal-btn" class="modal-btn modal-send-invoice-btn" type="submit">Send Invoice</button>
-                    <button id="cancel-modal-btn" class="modal-btn modal-cancel-btn" type="reset">Cancel</button>
-                </menu>
-            </fieldset>
-        </form>
-    </dialog>
-
-    <!-- Confirmation Modal -->
-    <dialog id="confirmation-modal" class="confirmation-modal">
-        <p>Invoice Sent Successfully!</p>
-        <button id="close-confirm-modal-btn" class="modal-btn modal-close-btn">OK</button>
-    </dialog>    
-    
-    <!-- Script -->
-    <script type="module" src="index.js"></script>
-</body>
-
+        <!-- Script -->
+        <script type="module" src="index.js"></script>
+    </body>
 </html>

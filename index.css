@@ -159,16 +159,14 @@ header p {
     transition: var(--primary-transition);
     padding: 1em;
     margin: 0.45em 0;
+        &:hover {
+            background-position: 0 0;
+        }
+        &:active {
+            background-position: 50% 0;
+        }
 }
-
-.primary-btn:hover {
-    background-position: 0 0;
-}
-
-.primary-btn:active {
-    background-position: 50% 0;
-}
-
+ 
 .btn-icon {
     margin-right: 0.5em;
 }
@@ -222,14 +220,12 @@ header p {
     border-radius: var(--large-border-radius);
     cursor: pointer;
     transition: var(--primary-transition);
-}
-
-.remove-btn:hover {
-    background-position: 0 0;
-}
-
-.remove-btn:active {
-    background-position: 50% 0;
+        &:hover {
+            background-position: 0 0;
+        }
+        &:active {
+            background-position: 50% 0;
+        }
 }
 
 .remove-btn,
@@ -263,14 +259,12 @@ header p {
     border-radius: var(--small-border-radius);
     cursor: pointer;
     transition: var(--primary-transition);
-}
-
-.action-btn:hover {
-    background-color: var(--dark-gray-bg-color);
-}
-
-.action-btn:active {
-    background-color: var(--active-dark-gray-bg-color);
+        &:hover {
+            background-color: var(--dark-gray-bg-color);
+        }
+        &:active {
+            background-color: var(--active-dark-gray-bg-color);
+        }
 }
 
 .task-names {
@@ -353,17 +347,15 @@ footer a {
     font-size: 0.85em;
     border-bottom: 1px solid transparent;
     transition: var(--primary-transition);
-}
-
-footer a:hover {
-    color: var(--footer-link-hover-color);
-    border-bottom: 1px solid var(--footer-link-hover-color);
-    outline-offset: 2px;
-}
-
-footer a:active {
-    background-color: var(--dark-gray-bg-color);
-    border-bottom: 1px solid var(--footer-link-hover-color);
+        &:hover {
+            color: var(--footer-link-hover-color);
+            border-bottom: 1px solid var(--footer-link-hover-color);
+            outline-offset: 2px;
+        }
+        &:active {
+            background-color: var(--dark-gray-bg-color);
+            border-bottom: 1px solid var(--footer-link-hover-color);
+        }
 }
 
 .footer-icon {
@@ -457,14 +449,12 @@ menu {
 .modal-action-btn {
     background-color: var(--secondary-bg-color);
     color: var(--primary-text-color);
-}
-
-.modal-action-btn:hover {
-    background-color: var(--button-red-hover-color);
-}
-
-.modal-action-btn:active {
-    background-color: var(--button-red-active-color);
+        &:hover {
+            background-color: var(--button-red-hover-color);
+        }
+        &:active {
+            background-color: var(--button-red-active-color);
+        }
 }
 
 .confirmation-modal {

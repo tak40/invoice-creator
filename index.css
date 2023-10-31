@@ -98,7 +98,7 @@ header p {
     margin: 1.5em auto;
 }
 
-.input-label {
+.task-entry-section label {
     font-size: 1rem;
     font-weight: bold;
 }
@@ -109,7 +109,7 @@ header p {
     gap: 0.25em;
 }
 
-.input-border {
+.task-entry-section input {
     border-radius: var(--small-border-radius);
     border: 1px solid var(--border-color);
     transition: var(--primary-transition);
@@ -573,9 +573,9 @@ menu {
         gap: 0.3em;
     }
 
-    .input-label {
+    .task-entry-section label {
         font-size: 0.888em;
-        margin: 0.25em 0;
+        margin: 0.5em 0;
     }
 
     /* BUTTONS */

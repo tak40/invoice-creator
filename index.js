@@ -149,7 +149,7 @@ function updateQuantity(taskElement, delta) {
     }
 
     // Update the total for this item
-    totalElement.textContent = `$${itemPrice * newQuantity}`
+    totalElement.textContent = `$${(itemPrice * newQuantity).toFixed(2)}`
 
     updateTotalAmount()
 }

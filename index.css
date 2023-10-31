@@ -1,49 +1,50 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     /* outline: 2px dotted tomato; */
 }
 
 :root {
     /* Text Colors */
-    --primary-text-color: #202020;  
+    --primary-text-color: #202020;
     --secondary-text-color: #707070;
 
     /* Background Colors */
-    --primary-bg-color: #fdfdfd;    
-    --secondary-bg-color: #FFA5A5;
-    --tertiary-bg-color: #6AB1D7;
-    --light-gray-bg-color: #F0F0F0; 
-    --dark-gray-bg-color: #E0E0E0; 
-    --active-dark-gray-bg-color: #D0D0D0;
-
+    --primary-bg-color: #fdfdfd;
+    --secondary-bg-color: #ffa5a5;
+    --tertiary-bg-color: #6ab1d7;
+    --light-gray-bg-color: #f0f0f0;
+    --dark-gray-bg-color: #e0e0e0;
+    --active-dark-gray-bg-color: #d0d0d0;
 
     /* Interactive Elements */
-    --button-red-hover-color: #FF8A80;  
-    --button-red-active-color: #FF5252;  
-    --button-blue-hover-color: #5B9CC7;
-    --button-blue-active-color: #4A859C;
-    --button-disabled-color-bg: #E0E0E0;
-    --button-disabled-color-text: #B0B0B0;
+    --button-red-hover-color: #ff8a80;
+    --button-red-active-color: #ff5252;
+    --button-blue-hover-color: #5b9cc7;
+    --button-blue-active-color: #4a859c;
+    --button-disabled-color-bg: #e0e0e0;
+    --button-disabled-color-text: #b0b0b0;
 
     /* Borders and Dividers */
-    --border-color: #D0D0D0;
+    --border-color: #d0d0d0;
 
     /* Border Radii */
     --small-border-radius: 5px;
-    --medium-border-radius: 7px;  
-    --large-border-radius: 10px; 
+    --medium-border-radius: 7px;
+    --large-border-radius: 10px;
 
     /* Transitions */
     --primary-transition: 0.3s ease-in-out;
 
     /* Misc */
-    --highlight-color: #FFD700;      
-    --footer-link-color: #505050;      
-    --footer-link-hover-color: #2C2C2C;  
+    --highlight-color: #ffd700;
+    --footer-link-color: #505050;
+    --footer-link-hover-color: #2c2c2c;
 }
 
-html{
-    font-family: 'Inter', sans-serif;
+html {
+    font-family: "Inter", sans-serif;
     font-size: 16px;
 }
 
@@ -70,7 +71,7 @@ main {
 /* ----- HEADER ----- */
 
 header {
-    background: var(--secondary-bg-color)
+    background: var(--secondary-bg-color);
 }
 
 header h1 {
@@ -108,12 +109,9 @@ header p {
     gap: 0.25em;
 }
 
-.task-input, 
-.price-input, 
-.quantity-input, 
-.add-task-btn {
+.input-border {
     border-radius: var(--small-border-radius);
-    border: 1px solid var(--border-color); 
+    border: 1px solid var(--border-color);
     transition: var(--primary-transition);
 }
 
@@ -142,7 +140,13 @@ header p {
 
 .primary-btn {
     width: 100%;
-    background: linear-gradient(45deg, var(--tertiary-bg-color), var(--tertiary-bg-color), var(--button-blue-hover-color), var(--button-blue-hover-color));
+    background: linear-gradient(
+        45deg,
+        var(--tertiary-bg-color),
+        var(--tertiary-bg-color),
+        var(--button-blue-hover-color),
+        var(--button-blue-hover-color)
+    );
     background-size: 200% 100%;
     background-position: 100% 0;
     color: var(--primary-text-color);
@@ -154,7 +158,7 @@ header p {
     cursor: pointer;
     transition: var(--primary-transition);
     padding: 1em;
-    margin: 0.45em 0; 
+    margin: 0.45em 0;
 }
 
 .primary-btn:hover {
@@ -171,9 +175,7 @@ header p {
 
 /* ----- TASK LIST SECTION ----- */
 
-.task-top-row,
-.notes-total-amount-top-row,
-.notes-total-amount-bottom-row {
+.task-notes-row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -186,7 +188,7 @@ header p {
 
 .task-list {
     display: grid;
-    grid-template-columns: auto auto 1fr; 
+    grid-template-columns: auto auto 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
         "taskname taskname taskname"
@@ -199,15 +201,21 @@ header p {
 .task-list:not(:last-child) {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5em;
-    margin-bottom: 0.5em; 
+    margin-bottom: 0.5em;
 }
 
 .remove-btn {
-    grid-area: removebtn; 
+    grid-area: removebtn;
     font-size: 0.75rem;
-    background: linear-gradient(45deg, var(--secondary-bg-color), var(--secondary-bg-color), var(--button-red-hover-color), var(--button-red-hover-color));
+    background: linear-gradient(
+        45deg,
+        var(--secondary-bg-color),
+        var(--secondary-bg-color),
+        var(--button-red-hover-color),
+        var(--button-red-hover-color)
+    );
     background-size: 200% 100%;
-    background-position: 100% 0; 
+    background-position: 100% 0;
     color: var(--primary-text-color);
     border: none;
     padding: 4px 8px;
@@ -224,7 +232,7 @@ header p {
     background-position: 50% 0;
 }
 
-.remove-btn, 
+.remove-btn,
 .task-quantity {
     margin: 0;
 }
@@ -234,7 +242,7 @@ header p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-gray-bg-color); 
+    background-color: var(--light-gray-bg-color);
     border-radius: var(--large-border-radius);
     padding: 0 10px;
     margin-left: 1em;
@@ -244,28 +252,25 @@ header p {
 
 .quantity {
     font-size: 0.75em;
-    background-color: var(--light-gray-bg-color); 
+    background-color: var(--light-gray-bg-color);
 }
 
-.minus-btn, 
-.plus-btn {
-    background-color: var(--light-gray-bg-color); 
+.action-btn {
+    background-color: var(--light-gray-bg-color);
     border: none;
-    color: var(--primary-text-color); 
+    color: var(--primary-text-color);
     font-size: 1rem;
     border-radius: var(--small-border-radius);
     cursor: pointer;
     transition: var(--primary-transition);
 }
 
-.minus-btn:hover,
-.plus-btn:hover {
-    background-color: var(--dark-gray-bg-color); 
+.action-btn:hover {
+    background-color: var(--dark-gray-bg-color);
 }
 
-.minus-btn:active,
-.plus-btn:active {
-    background-color: var(--active-dark-gray-bg-color); 
+.action-btn:active {
+    background-color: var(--active-dark-gray-bg-color);
 }
 
 .task-names {
@@ -291,7 +296,7 @@ header p {
     color: var(--primary-text-color);
     font-size: 1.25rem;
 }
- 
+
 /* ----- NOTES AND TOTAL AMOUNT SECTION ----- */
 
 .notes-total-amount-bottom-row {
@@ -318,12 +323,12 @@ header p {
 }
 
 .payment-methods-note {
-    font-style: italic; 
-    color: var(--secondary-text-color); 
+    font-style: italic;
+    color: var(--secondary-text-color);
     font-size: 0.85rem;
 }
 
-.send-invoice-btn{
+.send-invoice-btn {
     margin: 1.5em auto;
 }
 
@@ -335,19 +340,19 @@ footer {
     align-items: center;
     flex-shrink: 0; /* This ensures the footer doesn't shrink */
     height: 5em;
-    background-color: var(--light-gray-bg-color);  
+    background-color: var(--light-gray-bg-color);
     padding: 1em 0;
     text-align: center;
 }
 
 footer a {
-    color: var(--footer-link-color);  
+    color: var(--footer-link-color);
     text-decoration: none;
     padding: 5px 10px;
-    margin: 0 1em;  
-    font-size: 0.85em;  
+    margin: 0 1em;
+    font-size: 0.85em;
     border-bottom: 1px solid transparent;
-    transition: var(--primary-transition); 
+    transition: var(--primary-transition);
 }
 
 footer a:hover {
@@ -362,7 +367,7 @@ footer a:active {
 }
 
 .footer-icon {
-    margin-right: 0.5em;  
+    margin-right: 0.5em;
 }
 
 /* ----- MODAL STYLING ----- */
@@ -372,9 +377,9 @@ dialog::backdrop {
 }
 
 dialog {
-    border: none; 
+    border: none;
     border-radius: var(--medium-border-radius);
-    padding: 1.25em; 
+    padding: 1.25em;
     background-color: var(--primary-bg-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     max-width: 80vw;
@@ -403,7 +408,7 @@ label {
     font-weight: bold;
 }
 
-.modal-email-input, textarea {
+.modal-input {
     border: 1px solid var(--border-color);
     border-radius: var(--small-border-radius);
     padding: 0.5em;
@@ -414,7 +419,7 @@ label {
     max-width: calc(65vw - 2.5em);
 }
 
-.modal-email-input:focus, textarea:focus {
+.modal-input:focus {
     border-color: var(--tertiary-bg-color);
     background-color: var(--primary-bg-color);
 }
@@ -426,16 +431,13 @@ menu {
     gap: 1.5em;
 }
 
-.modal-send-invoice-btn,
-#submit-modal-btn {
+.modal-send-invoice-btn {
     background-color: var(--tertiary-bg-color);
     color: var(--primary-bg-color);
     transition: var(--primary-transition);
 }
 
-.modal-send-invoice-btn,
-.modal-cancel-btn,
-.modal-close-btn {
+.modal-btn {
     border: none;
     border-radius: var(--small-border-radius);
     font-size: 1rem;
@@ -444,24 +446,24 @@ menu {
     padding: 0.5em 1em;
 }
 
-#submit-modal-btn:hover {
+.modal-send-invoice-btn:hover {
     background-color: var(--button-blue-hover-color);
 }
 
-#submit-modal-btn:active {
+.modal-send-invoice-btn:active {
     background-color: var(--button-blue-active-color);
 }
 
-#cancel-modal-btn, #close-confirm-modal-btn {
+.modal-action-btn {
     background-color: var(--secondary-bg-color);
     color: var(--primary-text-color);
 }
 
-#cancel-modal-btn:hover, #close-confirm-modal-btn:hover {
+.modal-action-btn:hover {
     background-color: var(--button-red-hover-color);
 }
 
-#cancel-modal-btn:active, #close-confirm-modal-btn:active {
+.modal-action-btn:active {
     background-color: var(--button-red-active-color);
 }
 
@@ -473,7 +475,6 @@ menu {
 
 /* For tablets */
 @media (min-width: 600px) and (max-width: 1024px) {
-
     body {
         font-size: 18px;
     }
@@ -492,12 +493,11 @@ menu {
 
     .task-list {
         display: grid;
-        grid-template-columns: 5fr 1fr 1fr 1fr; 
-        grid-template-areas:
-            "taskname removebtn taskquantity tasktotal";
+        grid-template-columns: 5fr 1fr 1fr 1fr;
+        grid-template-areas: "taskname removebtn taskquantity tasktotal";
         gap: 0.25em;
     }
-    
+
     /* BUTTONS */
 
     .primary-btn {
@@ -513,11 +513,11 @@ menu {
     .send-invoice-btn {
         margin-bottom: 2em;
     }
-  
+
     /* FOOTER */
 
     footer a {
-        font-size: 1em;  
+        font-size: 1em;
     }
 
     /* MODAL STYLING */
@@ -535,12 +535,10 @@ menu {
         max-width: 50vw;
         max-height: 40vh;
     }
-    
 }
 
 /* For desktops */
 @media (min-width: 1024px) {
-    
     body {
         font-size: 20px;
     }
@@ -561,7 +559,7 @@ menu {
         margin: 0;
         padding: 0;
     }
-    
+
     header p {
         padding-bottom: 0;
         font-size: 0.85em;
@@ -570,9 +568,8 @@ menu {
 
     .task-list {
         display: grid;
-        grid-template-columns: 5fr 1fr 1fr 1fr; 
-        grid-template-areas:
-            "taskname removebtn taskquantity tasktotal";
+        grid-template-columns: 5fr 1fr 1fr 1fr;
+        grid-template-areas: "taskname removebtn taskquantity tasktotal";
         gap: 0.3em;
     }
 
@@ -580,7 +577,7 @@ menu {
         font-size: 0.888em;
         margin: 0.25em 0;
     }
-    
+
     /* BUTTONS */
 
     .primary-btn {
@@ -596,11 +593,11 @@ menu {
     .send-invoice-btn {
         margin-bottom: 2em;
     }
-  
+
     /* FOOTER */
 
     footer a {
-        font-size: 1em;  
+        font-size: 1em;
     }
 
     /* MODAL STYLING */

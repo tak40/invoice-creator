@@ -111,8 +111,21 @@ function addTask() {
         priceInput.value = ""
         quantityInput.value = ""
     } else {
-        console.log(taskInput.value, priceInput.value, quantityInput.value)
-        alert("Please enter a valid task, price, and quantity")
+        const taskValue = taskInput.value.trim()
+        const priceValue = Number(priceInput.value)
+        const quantityValue = Number(quantityInput.value)
+        if (!taskValue) {
+            displayInlineError(taskInput, "⚠️ Please enter a valid task")
+        }
+        if (!priceValue || priceValue <= 0) {
+            displayInlineError(priceInput, "⚠️ Please enter a valid price")
+        }
+        if (!quantityValue || quantityValue <= 0) {
+            displayInlineError(
+                quantityInput,
+                "⚠️ Please enter a valid quantity"
+            )
+        }
     }
     updateTotalAmount()
 }
@@ -231,7 +244,12 @@ function processInvoice() {
         emailField.value = ""
         messageField.value = ""
     } else {
-        alert("Please ensure the email and message fields are filled out.")
+        if (!emailValue) {
+            displayInlineError(emailField, "⚠️ Please enter a valid email")
+        }
+        if (!messageValue) {
+            displayInlineError(messageField, "⚠️ Please enter a valid message")
+        }
     }
 }
 
@@ -254,3 +272,24 @@ function closeDialogOnClickOutside(dialog, cancelBtnId) {
 // Close modals on clicking outside
 closeDialogOnClickOutside(invoiceModal, "cancel-modal-btn")
 closeDialogOnClickOutside(confirmationModal, "close-confirm-modal-btn")
+
+
+// Displays an inline error message on a given input field
+function displayInlineError(field, errorMessage) {
+    const originalType = field.type
+
+    // Temporarily change the field's type to "text" to display the error message.
+    field.type = "text"
+
+    // Add a "warning" CSS class to style the field with an error appearance.
+    field.classList.add("warning")
+
+    // Set the field's value to the provided error message.
+    field.value = errorMessage
+
+    setTimeout(() => {
+        field.classList.remove("warning")
+        field.value = ""
+        field.type = originalType
+    }, 3000)
+}

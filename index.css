@@ -606,3 +606,10 @@ menu {
         max-height: 40vh;
     }
 }
+
+
+
+
+.warning {
+    outline: 5px solid red;
+}

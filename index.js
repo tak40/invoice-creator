@@ -9,7 +9,6 @@ const quantityInput = document.getElementById("quantity")
 const addTaskButton = document.getElementById("add-task-btn")
 const taskEntryForm = document.getElementById("task-entry-form")
 const tasksContainerDiv = document.getElementById("tasks-container")
-const removeButton = document.getElementById("remove-btn")
 const taskQuantityDiv = document.getElementById("task-quantity")
 const taskTotalsDiv = document.getElementById("task-totals")
 const totalAmountDiv = document.getElementById("total-amount")
@@ -46,26 +45,28 @@ function handleTaskEvents(event) {
     const taskSection = event.target.closest(".task-list")
 
     let targetElement = event.target
+    let action = targetElement.dataset.action // Get the action of the current target
 
-    // Check if the target is the FontAwesome icon and set the target to its parent button if so
+    // If the clicked element is a FontAwesome icon, set the target to its parent button
     if (targetElement.classList.contains("fas")) {
         targetElement = targetElement.parentElement
+        action = targetElement.dataset.action // Update the action to that of the parent button
     }
 
-    // Check if the clicked element is the "remove" button
-    if (event.target.classList.contains("remove-btn")) {
-        // If so, call the removeTask function to delete the task
-        removeTask(targetElement)
-    }
-    // Check if the clicked element is the "plus" button
-    else if (targetElement.classList.contains("plus-btn")) {
-        // If so, call the updateQuantity function to increase the quantity by 1
-        updateQuantity(taskSection, 1)
-    }
-    // Check if the clicked element is the "minus" button
-    else if (targetElement.classList.contains("minus-btn")) {
-        // If so, call the updateQuantity function to decrease the quantity by 1
-        updateQuantity(taskSection, -1)
+    // Now, perform the necessary action based on the 'data-action' attribute
+    switch (action) {
+        case "remove":
+            removeTask(targetElement)
+            break
+        case "plus":
+            updateQuantity(taskSection, 1)
+            break
+        case "minus":
+            updateQuantity(taskSection, -1)
+            break
+        case "trash":
+            removeTask(taskSection) // Assuming you want to remove the task when trash is clicked
+            break
     }
 }
 
@@ -86,16 +87,16 @@ function addTask() {
         const htmlString = `
             <section class="task-list">
                 <p class="task-names">${taskInput.value.trim()}</p>
-                <button id="remove-btn" class="remove-btn">remove</button>
+                <button data-action="remove" class="remove-btn">remove</button>
                 <div class="task-quantity">
-                    <button class="action-btn minus-btn">${
+                    <button data-action="minus" class="action-btn minus-btn">${
                         quantityInput.value === "1"
-                            ? '<i class="fas fa-trash"></i>'
+                            ? '<i data-action="trash" class="fas fa-trash"></i>'
                             : "-"
                     }</button>
                     <p class="quantity">${quantityInput.value}</p>
-                    <button class="action-btn plus-btn">+</button>
-                </div>
+                    <button data-action="plus" class="action-btn plus-btn">+</button>
+                </div>  
                 <div class="task-totals">
                     <p class="total" data-price="${
                         priceInput.value
@@ -272,7 +273,6 @@ function closeDialogOnClickOutside(dialog, cancelBtnId) {
 // Close modals on clicking outside
 closeDialogOnClickOutside(invoiceModal, "cancel-modal-btn")
 closeDialogOnClickOutside(confirmationModal, "close-confirm-modal-btn")
-
 
 // Displays an inline error message on a given input field
 function displayInlineError(field, errorMessage) {

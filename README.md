@@ -10,6 +10,7 @@
 - [Initial Challenges](#initial-challenges)
 - [Refactoring Journey](#refactoring-journey)
     - [My Blueprint for JavaScript Refactoring](#my-blueprint-for-javascript-refactoring)
+    - [What's New? (Update 11-04-2023)](#whats-new)
 - [Key Enhancements](#key-enhancements)
 - [Local Development](#local-development)
 - [About Scrimba](#about-scrimba)
@@ -23,7 +24,7 @@ This project is a solo endeavor from the Scrimba bootcamp, conceived and built f
 
 Deployed on: 06-09-2023
 
-Last Updated: 10-26-2023
+Last Updated: 11-04-2023
 
 [Live Demo](https://invoice-creator-tak40.netlify.app/)
 
@@ -122,6 +123,52 @@ After thoughtful consideration, I established a blueprint for my refactoring pro
 4. Separate Concerns: Break down and categorize functions for clarity and maintainability.
 
 By following this structured approach, I was able to achieve a more efficient and organized application.
+
+## What's New
+
+ - Update 11-04-2023
+
+The latest version of Invoice Creator introduces a series of updates and optimizations to enhance functionality, improve code quality, and boost user experience. Here’s what’s been improved:
+
+### Code Refactoring and Consistency
+- **Decimal Point Consistency**: Now, all monetary values across the application are standardized to two decimal places, using the `toFixed(2)` method, ensuring uniformity and precision.
+- **Custom Alert System**: Moved away from default browser alerts to a custom, visually appealing alert system for error messages.
+- **Modal Input Retention**: User input is now preserved when modals are closed, preventing data loss and improving user experience.
+- **Remove Button Refactoring**: Transitioned remove button interactions from using IDs to data attributes, enhancing maintainability and readability.
+
+### CSS and HTML Enhancements
+- **Semantic HTML Refactoring**: Embraced semantic HTML tags to improve accessibility and document structure.
+- **CSS Class Refactoring**: Reduced redundancy by streamlining styling with unified class names, although a few rule sets still contain unique classes that perform identical functions. This aspect will be addressed in future updates.
+- **Descendant Selector Usage**: Simplified the CSS by employing descendant selectors where applicable.
+- **Nested CSS Implementation**: Adopted nested CSS rules for an organized and scalable styling approach.
+
+### Feature Enhancements
+- **Alert Dialogs**: Users are now greeted with custom-designed alerts that match the application's aesthetic for a consistent user interface.
+
+Here’s a preview of the new custom alert dialog amd Nexted CSS implementation:
+
+![Custom Alert Dialog](./images/custom-alert.png)
+
+```css
+.action-btn {
+    background-color: var(--light-gray-bg-color);
+    border: none;
+    color: var(--primary-text-color);
+    font-size: 1rem;
+    border-radius: var(--small-border-radius);
+    cursor: pointer;
+    transition: var(--primary-transition);
+        &:hover {
+            background-color: var(--dark-gray-bg-color);
+        }
+        &:active {
+            background-color: var(--active-dark-gray-bg-color);
+        }
+}
+```
+
+By focusing on these areas, Invoice Creator is steadily moving towards cleaner code, DRY principles, and a more polished product. Stay tuned for more updates as we continue to refine and enhance the application.
+
 
 ## Key Enhancements
 
